@@ -18,7 +18,7 @@ struct ContentView: View {
                     Text("Schedule Your Appointment").modifier(SchedulePageTitle())
                 }.padding([.top, .leading])
                 VStack(alignment: .leading) {
-                    Text("March 7:")
+                    Text("March 7:").foregroundColor(Color.white)
                     HStack{
                         Button(action: {buttonClicked=true}) {
                             Text(" 6:00 ").font(.system(size: geometry.size.width/30))
@@ -51,7 +51,7 @@ struct ContentView: View {
                 }
                 
                 VStack (alignment: .leading) {
-                    Text("March 8:")
+                    Text("March 8:").foregroundColor(Color.white)
                     HStack{
                         Button(action: {buttonClicked=true}) {
                             Text(" 6:00 ").font(.system(size: geometry.size.width/30))
@@ -84,7 +84,7 @@ struct ContentView: View {
                 }
                 
                 VStack (alignment: .leading) {
-                    Text("March 9:")
+                    Text("March 9:").foregroundColor(Color.white)
                     HStack{
                         Button(action: {buttonClicked=true}) {
                             Text(" 6:00 ").font(.system(size: geometry.size.width/30))
@@ -117,7 +117,7 @@ struct ContentView: View {
                 }
                 
                 VStack (alignment: .leading) {
-                    Text("March 10:")
+                    Text("March 10:").foregroundColor(Color.white)
                     HStack{
                         Button(action: {buttonClicked=true}) {
                             Text(" 6:00 ").font(.system(size: geometry.size.width/30))
@@ -150,7 +150,7 @@ struct ContentView: View {
                 }
                 
                 VStack (alignment: .leading) {
-                    Text("March 11:")
+                    Text("March 11:").foregroundColor(Color.white)
                     HStack{
                         Button(action: {buttonClicked=true}) {
                             Text(" 6:00 ").font(.system(size: geometry.size.width/30))
