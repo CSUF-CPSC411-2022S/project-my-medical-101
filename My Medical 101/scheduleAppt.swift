@@ -8,5 +8,17 @@
 import Foundation
 
 struct scheduleAppt{
-    // add code for schedule Appt page
+    private(set) var apptDate: [String:Int] = [:]
+    
+    mutating func date(_ month: String, for day: Int){
+        if day > 0 {
+            if let day1 = apptDate[month]{
+                apptDate[month] = day
+            }
+            if let day1 = apptDate[month], day1 < 31{
+                apptDate[month] = day1
+            }
+        }
+    }
+    
 }

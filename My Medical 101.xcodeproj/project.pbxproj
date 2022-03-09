@@ -101,9 +101,9 @@
 			children = (
 				9C2DDDD927C4BC6200390458 /* My_Medical_101App.swift */,
 				9C2DDDDB27C4BC6200390458 /* ContentView.swift */,
+				7AEC78B627C4C2B5006D4801 /* scheduleAppt.swift */,
 				9C2DDDDD27C4BC6400390458 /* Assets.xcassets */,
 				9C2DDDDF27C4BC6400390458 /* Preview Content */,
-				7AEC78B627C4C2B5006D4801 /* scheduleAppt.swift */,
 			);
 			path = "My Medical 101";
 			sourceTree = "<group>";
