@@ -100,10 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				9C2DDDD927C4BC6200390458 /* My_Medical_101App.swift */,
+				9C2DDE0527C4C2CF00390458 /* myChart.swift */,
 				9C2DDDDB27C4BC6200390458 /* ContentView.swift */,
 				9C2DDDDD27C4BC6400390458 /* Assets.xcassets */,
 				9C2DDDDF27C4BC6400390458 /* Preview Content */,
-				9C2DDE0527C4C2CF00390458 /* myChart.swift */,
 			);
 			path = "My Medical 101";
 			sourceTree = "<group>";

@@ -6,7 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Chart {
     // add code on my chart for medical history
+    private(set) var persons: [String:Int] = [:]
+    
+    mutating func person(name: String, age: Int) {
+        persons[name] = age
+    }
+    
 }
