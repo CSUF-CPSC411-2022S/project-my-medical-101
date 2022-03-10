@@ -8,5 +8,19 @@
 import Foundation
 
 struct Login {
-    // add code for the login page
+    
+    private(set) var userLogin: [String:String] = [:]
+    
+    mutating func loginPage(_ username: String, for password: String) {
+        
+        if username != " "{
+            
+            if let loginInfo = userLogin[username] {
+                userLogin[username] = password
+            }
+                    
+        }
+    }
+    
 }
+
