@@ -25,7 +25,7 @@ struct ScheduleView: View {
                             Button(action: {buttonClicked=true}) {
                                 Text(" 6:00 ").font(.system(size: geometry.size.width/25))
                                     .padding()
-                                    .background(RoundedRectangle(cornerRadius: 8).fill(Color.yellow))
+                                    .background(RoundedRectangle(cornerRadius: 8).fill(Color("pastelPurple")))
                                     .frame(minWidth: geometry.size.width/5)
                             }.buttonStyle(PlainButtonStyle()).padding([.leading])
                             
@@ -214,30 +214,13 @@ struct ScheduleView: View {
     }
 }
 
-struct HelpPage : View{
-    var body: some View{
-        Text("Instructions on how to use the app:\n").modifier(SchedulePageTitle())
-        Spacer()
-        Text("1. First, if you have not already, please create an account.\n2. If you already have an account, login with your username and password.\n3. After logging in and getting to the homepage, you can either Schedule an appointment or view your medical chart.\n")
-            .multilineTextAlignment(.leading)
-            .padding(.leading)
-        Spacer()
-        Text("Scheduling an appointment:\n1. After navigating to the \"Schedule Appointments\" section, you will see the dates on which the doctor is available to meet with you.\n2.Below each date will be the times they are available at. \n3.Please make sure to select one of the times and then click on \"Make Appointment\"\n")
-            .multilineTextAlignment(.leading)
-            .padding(.leading)
-        Spacer()
-        Text("View your Medical Chart:\n1. After Navigating to this page, you will see all your medical details listed here.\n2. Click on \"Medications\" to view any medications that your doctor may have prescribed to you.").multilineTextAlignment(.leading)
-            .padding(.leading)
-        Spacer()
-    }
-}
 struct SchedulePageTitle: ViewModifier {
    func body(content: Content) -> some View {
         content
            .font(.custom("Marker Felt", size: 30))
-           .foregroundColor(Color.white)
+           .foregroundColor(Color.black)
            .padding()
-           .background(Color.teal)
+           .background(Color("pastelBlue"))
            .cornerRadius(10)
            .frame(alignment: .center)
     }
