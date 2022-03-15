@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C2DDDDA27C4BC6200390458 /* My_Medical_101App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2DDDD927C4BC6200390458 /* My_Medical_101App.swift */; };
-		9C2DDDDC27C4BC6200390458 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2DDDDB27C4BC6200390458 /* ContentView.swift */; };
+		9C2DDDDC27C4BC6200390458 /* myChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2DDDDB27C4BC6200390458 /* myChartView.swift */; };
 		9C2DDDDE27C4BC6400390458 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C2DDDDD27C4BC6400390458 /* Assets.xcassets */; };
 		9C2DDDE127C4BC6400390458 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C2DDDE027C4BC6400390458 /* Preview Assets.xcassets */; };
 		9C2DDDEB27C4BC6500390458 /* My_Medical_101Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2DDDEA27C4BC6500390458 /* My_Medical_101Tests.swift */; };
@@ -16,6 +16,8 @@
 		9C2DDDF727C4BC6500390458 /* My_Medical_101UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2DDDF627C4BC6500390458 /* My_Medical_101UITestsLaunchTests.swift */; };
 		9C2DDE0427C4BCBC00390458 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9C2DDE0327C4BCBC00390458 /* .gitignore */; };
 		9C2DDE0627C4C2CF00390458 /* myChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2DDE0527C4C2CF00390458 /* myChart.swift */; };
+		9C8CFC3A27DA936A00C191A6 /* myMedicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CFC3927DA936A00C191A6 /* myMedicationsView.swift */; };
+		9C8CFC3C27DAA1FE00C191A6 /* helpPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CFC3B27DAA1FE00C191A6 /* helpPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,7 @@
 /* Begin PBXFileReference section */
 		9C2DDDD627C4BC6200390458 /* My Medical 101.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Medical 101.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C2DDDD927C4BC6200390458 /* My_Medical_101App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Medical_101App.swift; sourceTree = "<group>"; };
-		9C2DDDDB27C4BC6200390458 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9C2DDDDB27C4BC6200390458 /* myChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myChartView.swift; sourceTree = "<group>"; };
 		9C2DDDDD27C4BC6400390458 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C2DDDE027C4BC6400390458 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9C2DDDE627C4BC6500390458 /* My Medical 101Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My Medical 101Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +50,8 @@
 		9C2DDDF627C4BC6500390458 /* My_Medical_101UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Medical_101UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9C2DDE0327C4BCBC00390458 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		9C2DDE0527C4C2CF00390458 /* myChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myChart.swift; sourceTree = "<group>"; };
+		9C8CFC3927DA936A00C191A6 /* myMedicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myMedicationsView.swift; sourceTree = "<group>"; };
+		9C8CFC3B27DAA1FE00C191A6 /* helpPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +105,9 @@
 			children = (
 				9C2DDDD927C4BC6200390458 /* My_Medical_101App.swift */,
 				9C2DDE0527C4C2CF00390458 /* myChart.swift */,
-				9C2DDDDB27C4BC6200390458 /* ContentView.swift */,
+				9C2DDDDB27C4BC6200390458 /* myChartView.swift */,
+				9C8CFC3927DA936A00C191A6 /* myMedicationsView.swift */,
+				9C8CFC3B27DAA1FE00C191A6 /* helpPageView.swift */,
 				9C2DDDDD27C4BC6400390458 /* Assets.xcassets */,
 				9C2DDDDF27C4BC6400390458 /* Preview Content */,
 			);
@@ -264,9 +270,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C2DDDDC27C4BC6200390458 /* ContentView.swift in Sources */,
+				9C8CFC3A27DA936A00C191A6 /* myMedicationsView.swift in Sources */,
+				9C2DDDDC27C4BC6200390458 /* myChartView.swift in Sources */,
 				9C2DDDDA27C4BC6200390458 /* My_Medical_101App.swift in Sources */,
 				9C2DDE0627C4C2CF00390458 /* myChart.swift in Sources */,
+				9C8CFC3C27DAA1FE00C191A6 /* helpPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

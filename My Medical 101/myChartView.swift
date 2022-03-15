@@ -20,7 +20,9 @@ struct ChartView: View {
         NavigationView {
             GeometryReader { geometry in
                 VStack {
-                    Text("My Chart").modifier(chartTitle())
+                    Section (header: Text("My Chart").modifier(chartTitle())) {
+                        
+                    }
                     HStack {
                         Text("👩🏽")
                             .padding(10)
@@ -86,16 +88,19 @@ struct ChartView: View {
                                 Spacer()
                             }
                         }
-                        .font(.custom("Marker Felt", size: 20))
-                        .frame(width: 300)
-                        .background(Color("pastelBlue"))
-                        .cornerRadius(25)
-                        .foregroundColor(Color.black)
+                            .font(.custom("Marker Felt", size: 20))
+                            .frame(width: 300)
+                            .background(Color("pastelBlue"))
+                            .cornerRadius(25)
+                            .foregroundColor(Color.black)
                     }
                     Spacer()
-                    if buttonClicked {
-                        Text("Information Saved!")
-                            .foregroundColor(Color.black).padding(.horizontal)
+                    HStack {
+                        NavigationLink(destination: HelpPage()) {
+                            Text("Help Page")
+                                .padding(EdgeInsets(top: 50, leading: 170, bottom: 5, trailing: 2))
+                            Spacer()
+                        }
                     }
                 }.frame(height: geometry.size.height/1.5)
             }
@@ -103,22 +108,24 @@ struct ChartView: View {
     }
 }
 
-struct Medications: View {
-    var body: some View {
-        VStack {
-            Text("My Medications")
-                .font(.custom("Marker Felt", size:50))
-                .foregroundColor(Color.black)
-                .padding(EdgeInsets(top: 100, leading: 20, bottom: 50, trailing: 20))
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color("pastelBlue"))
-            HStack {
-                
-            }
-            Text("Welcome to the medications page. Currently the Doctor has not prescribed you anything. Come back later")
-        }
-    }
-}
+//struct Medications: View {
+//    var body: some View {
+//        VStack {
+//            Text("My Medications")
+//                .font(.custom("Marker Felt", size:50))
+//                .foregroundColor(Color.black)
+//                .padding(EdgeInsets(top: 100, leading: 20, bottom: 50, trailing: 20))
+//                .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                .background(Color("pastelBlue"))
+//            HStack {
+//
+//            }
+//            Text("Welcome to the medications page. Currently the Doctor has not prescribed you anything. Come back later")
+//        }
+//    }
+//}
+
+
 
 struct chartTitle: ViewModifier {
     func body(content: Content) -> some View {
@@ -159,8 +166,8 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 
-struct Previews_ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        Medications()
-    }
-}
+//struct Previews_ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Medications()
+//    }
+//}
