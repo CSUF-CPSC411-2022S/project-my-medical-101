@@ -9,6 +9,13 @@ import XCTest
 @testable import My_Medical_101
 
 class My_Medical_101Tests: XCTestCase {
+    
+    func testAddUser() {
+        var newUser = Login()
+        newUser.loginPage("NewUser20", for: "RandomPassword")
+        //checking for valid information
+        XCTAssertEqual(newUser.userLogin["NewUser20"], "RandomPassword")
+    }
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
