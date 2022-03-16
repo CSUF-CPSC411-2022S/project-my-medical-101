@@ -15,22 +15,17 @@ struct ContentViewLogin: View {
 
      var body: some View {
          NavigationView {
-         
              ZStack {
                  Color("pastelBlue")
                      .ignoresSafeArea()
-
                  GeometryReader { geometry in
-                     
                      VStack {
-                         
                          VStack {
-                             NavigationLink(destination: ContentViewHelpPage()) {
+                             NavigationLink(destination: HelpPage()) {
                                  Text("❓")
                                      .font(.custom("Courier New", size: 30))
                                      .frame(width: 400, height: 10, alignment: .topTrailing)
                              }
-                             
                              Text("My Medical 101")
                                  .bold()
                                  .underline()
@@ -77,10 +72,9 @@ struct ContentViewLogin: View {
                                  .font(.custom("Courier New", size: 20))
                                  .foregroundColor(Color.black)
                                  .padding(.top, 20)
-                         }
+                           }
                              
                          }.frame(height: geometry.size.height / 1.25)
-                         
                          Spacer()
                      }
                  }
@@ -111,23 +105,21 @@ struct ContentViewLogin: View {
  }
 
  struct LoginButtonText: ViewModifier {
- func body(content: Content) -> some View {
-     content
-        .font(.custom("Courier New", size: 22))
-        .foregroundColor(Color.black)
-        .padding()
-        .background(Color.white)
-        .cornerRadius(10)
+     func body(content: Content) -> some View {
+         content
+            .font(.custom("Courier New", size: 22))
+            .foregroundColor(Color.black)
+            .padding()
+            .background(Color.white)
+            .cornerRadius(10)
+    }
 }
-}
-
-
 
 
 // PAGE VIEW
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentViewLogin()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentViewLogin()
+//    }
+//}
