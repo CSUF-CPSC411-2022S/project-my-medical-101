@@ -16,6 +16,10 @@ struct ChartView: View {
     @State var dob: String = ""
     @State var buttonClicked = false
     @State private var meds = ["Amlodipine", "Tylenol", "Cetrizine"]
+    @State var changeProfileImage = false
+    @State var openCameraRoll = false
+    @State var imageSelected = UIImage()
+    
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
@@ -24,10 +28,32 @@ struct ChartView: View {
                         
                     }
                     HStack {
-                        Text("👩🏽")
-                            .padding(10)
-                            .font(.custom("Marker Felt", size:100))
-                            .overlay(Circle().stroke(Color("pastelBlue"), lineWidth: 4))
+                        ZStack(alignment: .bottomTrailing) {
+                            Button(action: {
+                                changeProfileImage = true
+                                openCameraRoll = true
+                            }, label: {
+                                if changeProfileImage {
+                                    Image(uiImage: imageSelected)
+                                        .resizable()
+                                        .frame(width: 120, height: 120)
+                                        .clipShape(Circle())
+                                } else {
+                                    Image("imagePlaceholder")
+                                        .resizable()
+                                        .frame(width: 120, height: 120)
+                                        .clipShape(Circle())
+                                }
+                                
+                            })
+                            Image(systemName: "plus")
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(.white)
+                                .background(Color.gray)
+                                .clipShape(Circle())
+                        }.sheet(isPresented: $openCameraRoll) {
+                            ImagePicker(selectedImage: $imageSelected, sourceType: .photoLibrary)
+                        }
                         HStack {
                             VStack {
                                 TextField("Name", text: $name)
