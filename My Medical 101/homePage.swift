@@ -7,5 +7,6 @@
 
 import Foundation
 
-
-
+struct HomePage {
+    // code here
+}

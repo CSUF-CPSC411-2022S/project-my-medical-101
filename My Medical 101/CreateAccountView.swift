@@ -12,33 +12,27 @@ import SwiftUI
 // CREATE AN ACCOUNT CODE
 
 struct ContentViewNewAccount: View {
- @State var email: String = ""
- @State var username: String = ""
- @State var password: String = ""
- @State var phoneNumber: String = ""
- @State var age: String = ""
- @State var insurance: String = ""
+    @State var email: String = ""
+    @State var username: String = ""
+    @State var password: String = ""
+    @State var phoneNumber: String = ""
+    @State var age: String = ""
+    @State var insurance: String = ""
+    @State var showErrorMessage = false
     
- @State var showErrorMessage = false
-
      var body: some View {
          NavigationView {
-         
              ZStack {
                  Color("pastelBlue")
                      .ignoresSafeArea()
-
                  GeometryReader { geometry in
-                     
                      VStack {
-                         
                          VStack {
-                             NavigationLink(destination: ContentViewHelpPage()) {
+                             NavigationLink(destination: HelpPage()) {
                                  Text("❓")
                                      .font(.custom("Courier New", size: 30))
                                      .frame(width: 400, height: 10, alignment: .topTrailing)
                              }
-                             
                              Text("Create Account")
                                  .bold()
                                  .underline()
@@ -89,20 +83,17 @@ struct ContentViewNewAccount: View {
                                                 
                                  //NAVIGATION LINK
                                  Section {
-                                 Button(action: {
+                                     Button(action: {
                     
-                                 }) {
-                                     NavigationLink(destination: ContentViewHomepage()) {
-                                   Text("Create my Account")
-                                     .modifier(CreateButtonText())
-                                 }
-                                 }.padding(.top)
+                                     }) {
+                                         NavigationLink(destination: ContentViewHomepage()) {
+                                             Text("Create my Account")
+                                                 .modifier(CreateButtonText())
+                                            }
+                                        }.padding(.top)
                                  }.disabled(email.isEmpty || username.isEmpty || password.isEmpty || phoneNumber.isEmpty || age.isEmpty || insurance.isEmpty)
-                             }
-                             
-                             
+                            }
                          }.frame(height: geometry.size.height / 1.25)
-                         
                          Spacer()
                      }
                  }
@@ -122,18 +113,12 @@ struct ContentViewNewAccount: View {
  }
 
  struct CreateButtonText: ViewModifier {
- func body(content: Content) -> some View {
-     content
-        .font(.custom("Courier New", size: 22))
-        .foregroundColor(Color.black)
-        .padding()
-        .background(Color.white)
-        .cornerRadius(10)
+     func body(content: Content) -> some View {
+         content
+            .font(.custom("Courier New", size: 22))
+            .foregroundColor(Color.black)
+            .padding()
+            .background(Color.white)
+            .cornerRadius(10)
+    }
 }
-}
-
-
-
-
-
-
