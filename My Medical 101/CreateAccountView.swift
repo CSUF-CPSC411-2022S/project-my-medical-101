@@ -11,12 +11,28 @@ import SwiftUI
 
 // CREATE AN ACCOUNT CODE
 
+class Patient: ObservableObject {
+    @Published var myName: String
+    @Published var dob: String
+    @Published var gender: String
+    @Published var height: String
+    @Published var weight: String
+
+    init() {
+        self.myName = ""
+        self.dob = ""
+        self.gender = ""
+        self.height = ""
+        self.weight = ""
+    }
+}
+
 struct ContentViewNewAccount: View {
+    @EnvironmentObject var patient: Patient
     @State var email: String = ""
     @State var username: String = ""
     @State var password: String = ""
     @State var phoneNumber: String = ""
-    @State var age: String = ""
     @State var insurance: String = ""
     @State var showErrorMessage = false
     
@@ -40,58 +56,86 @@ struct ContentViewNewAccount: View {
                                  .padding()
                              Text("Please enter all the information below, as it is required")
                                  .padding()
-                             
-                             HStack {
-                                 
-                                 Spacer()
-                                 Text("Email: ")
-                                 TextField("Email", text: $email)
-                                 Spacer()
+                             Group {
+                                 HStack {
+                                     Spacer()
+                                     Text("Full name: ")
+                                     TextField("John Smith", text: $patient.myName)
+                                     Spacer()
+                                 }
+                                 HStack {
+                                     Spacer()
+                                     Text("DOB: ")
+                                     TextField("mm/dd/yyyy", text: $patient.dob)
+                                     Spacer()
+                                 }
+                                 HStack {
+                                     Spacer()
+                                     Text("Gender: ")
+                                     TextField("", text: $patient.gender)
+                                     Spacer()
+                                 }
+                                 HStack {
+                                     Spacer()
+                                     Text("Height: ")
+                                     TextField("5'5", text: $patient.height)
+                                     Spacer()
+                                 }
+//                                 HStack {
+//                                     Spacer()
+//                                     Text("Weight: ")
+//                                     TextField("", text: $patient.weight)
+//                                     Spacer()
+//                                 }
                              }
+                             
+                             Group {
+                                 HStack {
+                                     Spacer()
+                                     Text("Email: ")
+                                     TextField("Email", text: $email)
+                                     Spacer()
+                                 }
+                                 HStack {
+                                     Spacer()
+                                     Text("Password: ")
+                                     TextField("Password", text: $password)
+                                     Spacer()
+                                 }
+                                 HStack {
+                                     Spacer()
+                                     Text("Phone Number: ")
+                                     TextField("Phone Number", text: $phoneNumber)
+                                     Spacer()
+                                 }
+                             }
+                             
                              HStack {
                                  Spacer()
                                  Text("Username: ")
                                  TextField("Username", text: $username)
                                  Spacer()
                              }
-                             HStack {
-                                 Spacer()
-                                 Text("Password: ")
-                                 TextField("Password", text: $password)
-                                 Spacer()
-                             }
-                             HStack {
-                                 Spacer()
-                                 Text("Phone Number: ")
-                                 TextField("Phone Number", text: $phoneNumber)
-                                 Spacer()
-                             }
-                             HStack {
-                                 Spacer()
-                                 Text("Age: ")
-                                 TextField("Age", text: $age)
-                                 Spacer()
-                             }
-                             HStack {
-                                 Spacer()
-                                 Text("Insurance: ")
-                                 TextField("Insurance", text: $insurance)
-                                 Spacer()
-                             }
+//                             HStack {
+//                                 Spacer()
+//                                 Text("Insurance: ")
+//                                 TextField("Insurance", text: $insurance)
+//                                 Spacer()
+//                             }
                              
-                             HStack{
-                                                
+                             HStack {
+
                                  //NAVIGATION LINK
                                  Section {
                                      Button(action: {
-                    
+
                                      }) {
                                          NavigationLink(destination: ContentViewHomepage()) {
                                              Text("Create my Account")
                                                  .modifier(CreateButtonText())
                                             }
                                         }.padding(.top)
-                                 }.disabled(email.isEmpty || username.isEmpty || password.isEmpty || phoneNumber.isEmpty || age.isEmpty || insurance.isEmpty)
+                                 }.disabled(email.isEmpty || username.isEmpty || password.isEmpty || phoneNumber.isEmpty)
                             }
                          }.frame(height: geometry.size.height / 1.25)
                          Spacer()
@@ -122,3 +166,10 @@ struct ContentViewNewAccount: View {
             .cornerRadius(10)
     }
 }
+
+struct NewAccount_Previews: PreviewProvider {
+   static var previews: some View {
+       ContentViewNewAccount()
+   }
+}
+
