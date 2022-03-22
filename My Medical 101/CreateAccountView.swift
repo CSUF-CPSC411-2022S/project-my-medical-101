@@ -81,12 +81,12 @@ struct ContentViewNewAccount: View {
                                      TextField("5'5", text: $patient.height)
                                      Spacer()
                                  }
-//                                 HStack {
-//                                     Spacer()
-//                                     Text("Weight: ")
-//                                     TextField("", text: $patient.weight)
-//                                     Spacer()
-//                                 }
+                                 HStack {
+                                     Spacer()
+                                     Text("Weight: ")
+                                     TextField("", text: $patient.weight)
+                                     Spacer()
+                                 }
                              }
                              
                              Group {
@@ -133,7 +133,7 @@ struct ContentViewNewAccount: View {
                                          NavigationLink(destination: ContentViewHomepage()) {
                                              Text("Create my Account")
                                                  .modifier(CreateButtonText())
-                                            }
+                                            }.navigationBarBackButtonHidden(true)
                                         }.padding(.top)
                                  }.disabled(email.isEmpty || username.isEmpty || password.isEmpty || phoneNumber.isEmpty)
                             }

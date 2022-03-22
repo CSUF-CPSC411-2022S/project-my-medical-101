@@ -10,9 +10,7 @@ import SwiftUI
 
 struct ChartView: View {
     @EnvironmentObject var patient: Patient
-    @State var weight: String = ""
     @State var buttonClicked = false
-    @State private var meds = ["Amlodipine", "Tylenol", "Cetrizine"]
     @State var changeProfileImage = false
     @State var openCameraRoll = false
     @State var imageSelected = UIImage()
@@ -57,10 +55,8 @@ struct ChartView: View {
                                    .font(.custom("Times New Roman", size: 30))
                                Spacer()
                                HStack {
-                                   Text("DOB: ")
+                                   Text("DOB: \(patient.dob)")
                                        .padding(5)
-                                       .font(.custom("Times New Roman", size: 15))
-                                   TextField("mm/dd/yyyy", text: $patient.dob)
                                        .font(.custom("Times New Roman", size: 15))
                                }
                            }
@@ -90,7 +86,7 @@ struct ChartView: View {
                        HStack {
                            Text("Weight: ")
                                .padding(20)
-                           TextField("Weight", text: $weight)
+                           TextField("Weight", text: $patient.weight)
                                .padding(EdgeInsets(top: 2, leading: 20, bottom: 5, trailing: 2))
                        }.modifier(chartInfo()).padding(.bottom)
                    }
@@ -103,19 +99,22 @@ struct ChartView: View {
                                Text(">")
                                    .padding(EdgeInsets(top: 2, leading: 120, bottom: 5, trailing: 2))
                                Spacer()
-                           }
+                           }.navigationBarBackButtonHidden(true)
                        }
                            .font(.custom("Times New Roman", size: 20))
                            .frame(width: 300)
                            .background(Color("pastelBlue"))
                            .cornerRadius(25)
                            .foregroundColor(Color.black)
+                       Spacer()
                        HStack {
-                           Text("Records")
-                               .padding(20)
-                           Text(">")
-                               .padding(EdgeInsets(top: 2, leading: 120, bottom: 5, trailing: 2))
-                           Spacer()
+                           NavigationLink(destination: Records()) {
+                               Text("Records")
+                                   .padding(20)
+                               Text(">")
+                                   .padding(EdgeInsets(top: 2, leading: 140, bottom: 5, trailing: 2))
+                               Spacer()
+                           }.navigationBarBackButtonHidden(true)
                        }
                            .font(.custom("Times New Roman", size: 20))
                            .frame(width: 300)

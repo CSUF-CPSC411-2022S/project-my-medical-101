@@ -71,7 +71,7 @@ struct ContentViewLogin: View {
                                      NavigationLink(destination: ContentViewHomepage()) {
                                    Text("Login")
                                      .modifier(LoginButtonText())
-                                     }
+                                     }.navigationBarBackButtonHidden(true)
                                  }.padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
                              }.disabled(email.isEmpty || password.isEmpty)
                          }
@@ -88,7 +88,7 @@ struct ContentViewLogin: View {
                                      .font(.custom("Courier New", size: 20))
                                      .foregroundColor(Color.black)
                                      .padding(.top, 20)
-                             }
+                             }.navigationBarBackButtonHidden(true)
                          }
                          Spacer()
                      }

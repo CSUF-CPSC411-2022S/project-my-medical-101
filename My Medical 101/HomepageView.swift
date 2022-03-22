@@ -42,7 +42,7 @@ struct ContentViewHomepage: View {
                                     Text("My Chart")
                                         .modifier(ButtonText())
                                     Spacer()
-                                }.navigationBarBackButtonHidden(true)
+                                }
                             }.padding(EdgeInsets(top:20, leading: 30, bottom: 20, trailing: 10))
                             
                             HStack {
