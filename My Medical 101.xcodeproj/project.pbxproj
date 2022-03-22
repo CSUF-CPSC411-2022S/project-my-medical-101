@@ -9,13 +9,11 @@
 /* Begin PBXBuildFile section */
 		7A43C0FB27E11B76004F3434 /* helpPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A43C0FA27E11B76004F3434 /* helpPageView.swift */; };
 		7A43C0FF27E97651004F3434 /* doctorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A43C0FE27E97651004F3434 /* doctorView.swift */; };
-		7AEC78B727C4C2B5006D4801 /* scheduleAppt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC78B627C4C2B5006D4801 /* scheduleAppt.swift */; };
-		9C2DDDDA27C4BC6200390458 /* My_Medical_101App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2DDDD927C4BC6200390458 /* My_Medical_101App.swift */; };
-		9C2DDDDC27C4BC6200390458 /* scheduleApptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2DDDDB27C4BC6200390458 /* scheduleApptView.swift */; };
 		7AE2BC9F27C4C2C800102805 /* loginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE2BC9E27C4C2C800102805 /* loginPage.swift */; };
 		7AE2BCA127C4C2D900102805 /* homePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE2BCA027C4C2D900102805 /* homePage.swift */; };
 		7AE3B47727E14D90002CA78C /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE3B47627E14D90002CA78C /* CreateAccountView.swift */; };
 		7AE3B47927E14DA7002CA78C /* HomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE3B47827E14DA6002CA78C /* HomepageView.swift */; };
+		7AEC78B727C4C2B5006D4801 /* scheduleAppt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC78B627C4C2B5006D4801 /* scheduleAppt.swift */; };
 		9C2DDDDA27C4BC6200390458 /* My_Medical_101App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2DDDD927C4BC6200390458 /* My_Medical_101App.swift */; };
 		9C2DDDDC27C4BC6200390458 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2DDDDB27C4BC6200390458 /* LoginView.swift */; };
 		9C2DDDDE27C4BC6400390458 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C2DDDDD27C4BC6400390458 /* Assets.xcassets */; };
@@ -28,12 +26,11 @@
 		9C3334B627E959D2001F838B /* recordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3334B527E959D2001F838B /* recordsView.swift */; };
 		9C52248227E13F9F0006402D /* imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C52248127E13F9F0006402D /* imagePicker.swift */; };
 		9C5A441427E1B62D00C16103 /* docHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5A441327E1B62D00C16103 /* docHomePage.swift */; };
-		9C5A441627E1B64F00C16103 /* docHomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5A441527E1B64F00C16103 /* docHomePageView.swift */; };
 		9C817B1B27E16F2A00BD36C8 /* myChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C817B1A27E16F2A00BD36C8 /* myChartView.swift */; };
-		9C817B1D27E171E100BD36C8 /* helpPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C817B1C27E171E100BD36C8 /* helpPageView.swift */; };
 		9C817B1F27E1728800BD36C8 /* createAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C817B1E27E1728800BD36C8 /* createAccount.swift */; };
 		9C817B2127E172B300BD36C8 /* myMedications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C817B2027E172B300BD36C8 /* myMedications.swift */; };
 		9C8CFC3A27DA936A00C191A6 /* myMedicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CFC3927DA936A00C191A6 /* myMedicationsView.swift */; };
+		9CACDAAA27EA588C003517E9 /* scheduleApptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CACDAA927EA588C003517E9 /* scheduleApptView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,14 +53,11 @@
 /* Begin PBXFileReference section */
 		7A43C0FA27E11B76004F3434 /* helpPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpPageView.swift; sourceTree = "<group>"; };
 		7A43C0FE27E97651004F3434 /* doctorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doctorView.swift; sourceTree = "<group>"; };
-		7AEC78B627C4C2B5006D4801 /* scheduleAppt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scheduleAppt.swift; sourceTree = "<group>"; };
-		9C2DDDD627C4BC6200390458 /* My Medical 101.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Medical 101.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C2DDDD927C4BC6200390458 /* My_Medical_101App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Medical_101App.swift; sourceTree = "<group>"; };
-		9C2DDDDB27C4BC6200390458 /* scheduleApptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scheduleApptView.swift; sourceTree = "<group>"; };
 		7AE2BC9E27C4C2C800102805 /* loginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginPage.swift; sourceTree = "<group>"; };
 		7AE2BCA027C4C2D900102805 /* homePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homePage.swift; sourceTree = "<group>"; };
 		7AE3B47627E14D90002CA78C /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		7AE3B47827E14DA6002CA78C /* HomepageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageView.swift; sourceTree = "<group>"; };
+		7AEC78B627C4C2B5006D4801 /* scheduleAppt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scheduleAppt.swift; sourceTree = "<group>"; };
 		9C2DDDD627C4BC6200390458 /* My Medical 101.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Medical 101.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C2DDDD927C4BC6200390458 /* My_Medical_101App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Medical_101App.swift; sourceTree = "<group>"; };
 		9C2DDDDB27C4BC6200390458 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -79,12 +73,11 @@
 		9C3334B527E959D2001F838B /* recordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recordsView.swift; sourceTree = "<group>"; };
 		9C52248127E13F9F0006402D /* imagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagePicker.swift; sourceTree = "<group>"; };
 		9C5A441327E1B62D00C16103 /* docHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = docHomePage.swift; sourceTree = "<group>"; };
-		9C5A441527E1B64F00C16103 /* docHomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = docHomePageView.swift; sourceTree = "<group>"; };
 		9C817B1A27E16F2A00BD36C8 /* myChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myChartView.swift; sourceTree = "<group>"; };
-		9C817B1C27E171E100BD36C8 /* helpPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpPageView.swift; sourceTree = "<group>"; };
 		9C817B1E27E1728800BD36C8 /* createAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createAccount.swift; sourceTree = "<group>"; };
 		9C817B2027E172B300BD36C8 /* myMedications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myMedications.swift; sourceTree = "<group>"; };
 		9C8CFC3927DA936A00C191A6 /* myMedicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myMedicationsView.swift; sourceTree = "<group>"; };
+		9CACDAA927EA588C003517E9 /* scheduleApptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scheduleApptView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +131,7 @@
 			children = (
 				9C2DDDD927C4BC6200390458 /* My_Medical_101App.swift */,
 				7AEC78B627C4C2B5006D4801 /* scheduleAppt.swift */,
-				9C2DDDDB27C4BC6200390458 /* scheduleApptView.swift */,
+				9CACDAA927EA588C003517E9 /* scheduleApptView.swift */,
 				7A43C0FA27E11B76004F3434 /* helpPageView.swift */,
 				7A43C0FE27E97651004F3434 /* doctorView.swift */,
 				7AE2BC9E27C4C2C800102805 /* loginPage.swift */,
@@ -316,10 +309,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C2DDDDC27C4BC6200390458 /* scheduleApptView.swift in Sources */,
+				9C2DDDDC27C4BC6200390458 /* LoginView.swift in Sources */,
 				7AEC78B727C4C2B5006D4801 /* scheduleAppt.swift in Sources */,
 				7A43C0FB27E11B76004F3434 /* helpPageView.swift in Sources */,
 				7A43C0FF27E97651004F3434 /* doctorView.swift in Sources */,
+				9CACDAAA27EA588C003517E9 /* scheduleApptView.swift in Sources */,
 				9C8CFC3A27DA936A00C191A6 /* myMedicationsView.swift in Sources */,
 				9C52248227E13F9F0006402D /* imagePicker.swift in Sources */,
 				9C2DDDDC27C4BC6200390458 /* LoginView.swift in Sources */,

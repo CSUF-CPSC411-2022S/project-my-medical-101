@@ -13,8 +13,8 @@ struct My_Medical_101App: App {
     @StateObject var scheduleAppt = ScheduleAppt()
     var body: some Scene {
         WindowGroup {
-            ContentViewLogin().environmentObject(patient)
-            ScheduleView().environmentObject(scheduleAppt)
+            ContentViewLogin().environmentObject(patient).environmentObject(scheduleAppt)
+            //ScheduleView().environmentObject(scheduleAppt)
         }
     }
 }

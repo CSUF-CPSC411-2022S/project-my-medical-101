@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  My Medical 101
 //
-//  Created by Brenda Gomez on 2/21/22.
+//  Created by Vibha Rajagopalan on 2/21/22.
 //
 import SwiftUI
 import AssetsLibrary

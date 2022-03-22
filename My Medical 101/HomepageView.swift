@@ -40,19 +40,16 @@ struct ContentViewHomepage: View {
                             HStack {
                                 NavigationLink(destination: ChartView()) {
                                     Text("My Chart")
-                                        .modifier(ButtonText())
+                                        .modifier(HPButtonText())
                                     Spacer()
                                 }
                             }.padding(EdgeInsets(top:20, leading: 30, bottom: 20, trailing: 10))
                             
-                            HStack {
-                                Button(action: {
-                                  print("Scheduling Appointments")
-                                }) {
-                                  Text("Schedule Appointments")
-                                        .modifier(ButtonText())
-                                }
-                            }.padding(EdgeInsets(top:20, leading: 0, bottom: 20, trailing: 10))
+                            NavigationLink(destination: ScheduleView()) {
+                                Text("Schedule Appointment")
+                                    .modifier(HPButtonText())
+                                Spacer()
+                            }
                         }.padding(EdgeInsets(top:20, leading: 10, bottom: 0, trailing: 20))
                         Spacer()
                         HStack {
@@ -95,7 +92,7 @@ struct TitleText: ViewModifier {
    }
 }
 
-struct ButtonText: ViewModifier {
+struct HPButtonText: ViewModifier {
     func body(content: Content) -> some View {
         content
             .frame(width:125, height: 50)
