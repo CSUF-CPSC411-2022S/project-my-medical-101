@@ -12,11 +12,6 @@ struct ScheduleView : View {
     @State private var date = Date()
     // TODO: change all state vars to class attributes
     // TODO: time squares
-        // buttons
-        @State var button1Clicked = false
-        @State var button2Clicked = false
-        @State var button3Clicked = false
-        @State var button4Clicked = false
         @State var submitButtonClicked = false
         
         let dateRange: ClosedRange<Date> = {
@@ -46,9 +41,9 @@ struct ScheduleView : View {
                     Text("Reason for Visit: ").font(.custom("Times New Roman", size: 20)).bold()
                         .frame(height: 45.0)
                     HStack{
-                        Button(action: {button1Clicked=true;button2Clicked = false; button3Clicked = false; button4Clicked = false
+                        Button(action: {$reasonForVisit.generalCheckup.wrappedValue=true;$reasonForVisit.followUp.wrappedValue = false; $reasonForVisit.refill.wrappedValue = false; $reasonForVisit.injury.wrappedValue = false
                         }) {
-                            if button1Clicked == true{
+                            if $reasonForVisit.generalCheckup.wrappedValue == true{
                                 Text("General Checkup")
                                   .modifier(ButtonClicked())
                             }
@@ -57,8 +52,8 @@ struct ScheduleView : View {
                                   .modifier(ButtonText())
                             }
                         }.padding([.top, .leading])
-                        Button(action: {button2Clicked=true;button1Clicked = false; button3Clicked = false; button4Clicked = false}) {
-                            if button2Clicked == true{
+                        Button(action: {$reasonForVisit.followUp.wrappedValue=true;$reasonForVisit.generalCheckup.wrappedValue = false; $reasonForVisit.refill.wrappedValue = false; $reasonForVisit.injury.wrappedValue = false}) {
+                            if $reasonForVisit.followUp.wrappedValue == true{
                                 Text("Follow \nup")
                                   .modifier(ButtonClicked())
                             }
@@ -67,8 +62,8 @@ struct ScheduleView : View {
                                   .modifier(ButtonText())
                             }
                         }.padding(.top)
-                        Button(action: {button3Clicked=true;button1Clicked = false; button2Clicked = false; button4Clicked = false}) {
-                            if button3Clicked == true{
+                        Button(action: {$reasonForVisit.refill.wrappedValue=true;$reasonForVisit.generalCheckup.wrappedValue = false; $reasonForVisit.followUp.wrappedValue = false; $reasonForVisit.injury.wrappedValue = false}) {
+                            if $reasonForVisit.refill.wrappedValue == true{
                                 Text("Refill")
                                   .modifier(ButtonClicked())
                             }
@@ -77,8 +72,8 @@ struct ScheduleView : View {
                                   .modifier(ButtonText())
                             }
                         }.padding(.top)
-                        Button(action: {button4Clicked=true;button1Clicked = false; button2Clicked = false; button3Clicked = false}) {
-                            if button4Clicked == true{
+                        Button(action: {$reasonForVisit.injury.wrappedValue=true;$reasonForVisit.generalCheckup.wrappedValue = false; $reasonForVisit.followUp.wrappedValue = false; $reasonForVisit.refill.wrappedValue = false}) {
+                            if $reasonForVisit.injury.wrappedValue == true{
                                 Text("Injury")
                                   .modifier(ButtonClicked())
                             }
@@ -94,8 +89,15 @@ struct ScheduleView : View {
                     
                 }.modifier(reasonForVisitField()).padding(.bottom)
                 Spacer()
-                Button(action: {submitButtonClicked=true; $reasonForVisit.submitButton.wrappedValue = true}) {
-                    if submitButtonClicked == true && (button1Clicked == true || button2Clicked == true || button3Clicked == true || button4Clicked == true){
+                Button(action: {
+                    submitButtonClicked=true;
+                    $reasonForVisit.submitButton.wrappedValue = true}) {
+                    if reasonForVisit.submitButton &&
+                        (reasonForVisit.generalCheckup == true ||
+                         reasonForVisit.followUp == true ||
+                         reasonForVisit.refill == true ||
+                         reasonForVisit.injury == true ||
+                         reasonForVisit.typedReasonForVisit != ""){
                         Text("Schedule Appointment")
                           .modifier(ButtonClicked())
                     }

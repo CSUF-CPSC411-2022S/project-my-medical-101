@@ -16,8 +16,25 @@ struct DocView : View {
         GeometryReader { geometry in
             VStack{
                 Text("Patient 1: ")
-                if appointment.submitButton == true{
-                    Text("\(appointment.typedReasonForVisit)")
+                if appointment.submitButton == true {
+                    if appointment.generalCheckup == true{
+                        Text("General Checkup")
+                    }
+                    else if appointment.followUp == true{
+                        Text("Follow up")
+                    }
+                    else if appointment.refill == true{
+                        Text("Refill")
+                    }
+                    else if appointment.injury == true{
+                        Text("Injury")
+                    }
+                    else if appointment.typedReasonForVisit != ""{
+                        Text("\(appointment.typedReasonForVisit)")
+                    }
+                    else{
+                        Text("Purpose of visit not listed")
+                    }
                 }
             }
         }
