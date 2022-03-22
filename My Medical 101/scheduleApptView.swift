@@ -9,9 +9,7 @@ import AssetsLibrary
 
 struct ScheduleView : View {
     @EnvironmentObject var reasonForVisit: ScheduleAppt
-    @State private var date = Date()
-    // TODO: change all state vars to class attributes
-    // TODO: time squares
+    // TODO: time squares (?)
         @State var submitButtonClicked = false
         
         let dateRange: ClosedRange<Date> = {
@@ -32,7 +30,7 @@ struct ScheduleView : View {
                 Text("1. Choose a time between 8 a.m. - 5 p.m. \n2. Then, select the reason for your visit or fill in your reason in the text box below.").padding(.horizontal).modifier(explanation())
                 DatePicker(
                     "",
-                     selection: $date,
+                    selection: $reasonForVisit.date,
                      in: dateRange,
                     displayedComponents: [.date, .hourAndMinute]
                 ).padding(.all).frame(width: 70.0, height: 100.0).modifier(dateField())

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import AssetsLibrary
 
-// TODO: View
+// TODO: Continue working on View
 struct DocView : View {
     @EnvironmentObject var appointment: ScheduleAppt
     var body: some View {
@@ -20,6 +20,7 @@ struct DocView : View {
                 VStack{
                     Text("Patient Name: Patient 1 ")
                     Text("DOB")
+                    Text("\(appointment.date)")
                     HStack{
                         Text("Reason for Visit: ")
                         if appointment.submitButton == true {

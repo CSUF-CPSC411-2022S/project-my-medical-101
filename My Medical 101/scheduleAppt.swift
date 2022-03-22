@@ -14,6 +14,7 @@ class ScheduleAppt: ObservableObject {
     @Published var injury: Bool = false
     @Published var typedReasonForVisit: String = ""
     @Published var submitButton: Bool = false
+    @Published var date = Date()
     
     init(){
         self.generalCheckup = false
@@ -22,5 +23,6 @@ class ScheduleAppt: ObservableObject {
         self.injury = false
         self.typedReasonForVisit = ""
         self.submitButton = false
+        self.date = Date()
     }
 }
