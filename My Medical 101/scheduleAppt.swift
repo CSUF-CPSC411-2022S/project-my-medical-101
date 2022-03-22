@@ -7,18 +7,12 @@
 
 import Foundation
 
-struct scheduleAppt{
-    private(set) var apptDate: [String:Int] = [:]
-    
-    mutating func date(_ month: String, for day: Int){
-        if day > 0 {
-            if let day1 = apptDate[month]{
-                apptDate[month] = day
-            }
-            if let day1 = apptDate[month], day1 < 31{
-                apptDate[month] = day1
-            }
-        }
+class ScheduleAppt: ObservableObject {
+    @Published var typedReasonForVisit: String = ""
+    @Published var submitButton: Bool = false
+   
+    init(){
+        self.typedReasonForVisit = ""
+        self.submitButton = false
     }
-    
 }

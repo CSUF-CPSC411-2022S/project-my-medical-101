@@ -6,25 +6,27 @@
 //
 import SwiftUI
 import AssetsLibrary
+
 struct ScheduleView : View {
+    @EnvironmentObject var reasonForVisit: ScheduleAppt
     @State private var date = Date()
-    @State var reasonForVisit: String = ""
-    @State var buttonClickedName: String = "" //TODO: to store value of button
-    // buttons
-    @State var button1Clicked = false
-    @State var button2Clicked = false
-    @State var button3Clicked = false
-    @State var button4Clicked = false
-    @State var submitButtonClicked = false
-    
-    let dateRange: ClosedRange<Date> = {
-        let calendar = Calendar.current
-        let startComponents = DateComponents(year: 2022, month: 1, day: 1)
-        let endComponents = DateComponents(year: 2022, month: 12, day: 31, hour: 5)
-        return calendar.date(from:startComponents)!
-            ...
-            calendar.date(from:endComponents)!
-    }()
+    // TODO: change all state vars to class attributes
+    // TODO: time squares
+        // buttons
+        @State var button1Clicked = false
+        @State var button2Clicked = false
+        @State var button3Clicked = false
+        @State var button4Clicked = false
+        @State var submitButtonClicked = false
+        
+        let dateRange: ClosedRange<Date> = {
+            let calendar = Calendar.current
+            let startComponents = DateComponents(year: 2022, month: 1, day: 1)
+            let endComponents = DateComponents(year: 2022, month: 12, day: 31, hour: 5)
+            return calendar.date(from:startComponents)!
+                ...
+                calendar.date(from:endComponents)!
+        }()
 
     var body: some View {
         NavigationView{
@@ -87,12 +89,12 @@ struct ScheduleView : View {
                         }.padding([.top, .trailing])
                     }
                     
-                    TextField("If other, type here", text: $reasonForVisit).textFieldStyle(.roundedBorder)
+                    TextField("If other, type here", text: $reasonForVisit.typedReasonForVisit).textFieldStyle(.roundedBorder)
                         .padding(.all)
                     
                 }.modifier(reasonForVisitField()).padding(.bottom)
                 Spacer()
-                Button(action: {submitButtonClicked=true}) {
+                Button(action: {submitButtonClicked=true; $reasonForVisit.submitButton.wrappedValue = true}) {
                     if submitButtonClicked == true && (button1Clicked == true || button2Clicked == true || button3Clicked == true || button4Clicked == true){
                         Text("Schedule Appointment")
                           .modifier(ButtonClicked())
@@ -102,10 +104,13 @@ struct ScheduleView : View {
                           .modifier(ButtonText())
                     }
                 }.alert("Your Appointment has been scheduled!", isPresented: $submitButtonClicked) {
-                    Button("Go back to Home page") { }
+                    Button("Go back to Home page") {}
                 }
                 NavigationLink(destination: HelpPage()) {
                     Text("\nClick here to learn about how the app works!").font(.custom("Times New Roman", size: 12))
+                }
+                NavigationLink(destination: DocView()) {
+                    Text("\nDoctor").font(.custom("Times New Roman", size: 12))
                 }
             }
           }

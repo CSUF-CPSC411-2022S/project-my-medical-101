@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct My_Medical_101App: App {
+    @StateObject var scheduleAppt = ScheduleAppt()
     var body: some Scene {
         WindowGroup {
-            ScheduleView()
+            ScheduleView().environmentObject(scheduleAppt)
         }
     }
 }

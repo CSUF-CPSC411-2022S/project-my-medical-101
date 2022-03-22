@@ -8,15 +8,4 @@
 import XCTest
 @testable import My_Medical_101
 
-class My_Medical_101Tests: XCTestCase {
-    func testDate(){
-        let date = scheduleAppt()
-        XCTAssertNotNil(date)
-    }
 
-    func testIfDateStored(){
-        var dateStored = scheduleAppt(apptDate:["March": 20])
-        dateStored.date("March", for: 20)
-        XCTAssertTrue(dateStored.apptDate["March"] == 20)
-    }
-}
