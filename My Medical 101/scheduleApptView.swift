@@ -11,6 +11,7 @@ struct ScheduleView : View {
     @EnvironmentObject var reasonForVisit: ScheduleAppt
     // TODO: time squares (?)
         @State var submitButtonClicked = false
+        @State var message: String = ""
         
         let dateRange: ClosedRange<Date> = {
             let calendar = Calendar.current
@@ -89,7 +90,25 @@ struct ScheduleView : View {
                 Spacer()
                 Button(action: {
                     submitButtonClicked=true;
-                    $reasonForVisit.submitButton.wrappedValue = true}) {
+                    $reasonForVisit.submitButton.wrappedValue = true
+                    if reasonForVisit.submitButton &&
+                        (reasonForVisit.generalCheckup == true ||
+                         reasonForVisit.followUp == true ||
+                         reasonForVisit.refill == true ||
+                         reasonForVisit.injury == true ||
+                         reasonForVisit.typedReasonForVisit != ""){
+                        message = "Your appointment has been scheduled!"
+                    }
+                    else if reasonForVisit.submitButton &&
+                        (reasonForVisit.generalCheckup == false ||
+                         reasonForVisit.followUp == false ||
+                         reasonForVisit.refill == false ||
+                         reasonForVisit.injury == false ||
+                         reasonForVisit.typedReasonForVisit == ""){
+                        message = "Please select or fill out your reason for visit"
+                    }
+                    else{}
+                }) {
                     if reasonForVisit.submitButton &&
                         (reasonForVisit.generalCheckup == true ||
                          reasonForVisit.followUp == true ||
@@ -103,8 +122,9 @@ struct ScheduleView : View {
                         Text("Schedule Appointment")
                           .modifier(ButtonText())
                     }
-                }.alert("Your Appointment has been scheduled!", isPresented: $submitButtonClicked) {
-                    Button("Go back to Home page") {}
+                }.alert("\(message)", isPresented: $submitButtonClicked) {
+                    Button("Home page") {}
+                    Button("Schedule Appointment"){}
                 }
                 NavigationLink(destination: HelpPage()) {
                     Text("\nClick here to learn about how the app works!").font(.custom("Times New Roman", size: 12))
