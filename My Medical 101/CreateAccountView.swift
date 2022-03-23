@@ -39,8 +39,7 @@ struct ContentViewNewAccount: View {
      var body: some View {
          NavigationView {
              ZStack {
-                 Color("pastelBlue")
-                     .ignoresSafeArea()
+                 Color("pastelBlue").ignoresSafeArea()
                  GeometryReader { geometry in
                      VStack {
                          VStack {

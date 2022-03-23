@@ -99,7 +99,7 @@ struct ChartView: View {
                                Text(">")
                                    .padding(EdgeInsets(top: 2, leading: 120, bottom: 5, trailing: 2))
                                Spacer()
-                           }.navigationBarBackButtonHidden(true)
+                           }
                        }
                            .font(.custom("Times New Roman", size: 20))
                            .frame(width: 300)
@@ -114,7 +114,7 @@ struct ChartView: View {
                                Text(">")
                                    .padding(EdgeInsets(top: 2, leading: 140, bottom: 5, trailing: 2))
                                Spacer()
-                           }.navigationBarBackButtonHidden(true)
+                           }
                        }
                            .font(.custom("Times New Roman", size: 20))
                            .frame(width: 300)
