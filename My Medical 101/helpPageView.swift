@@ -40,11 +40,11 @@ struct HelpPage : View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        HelpPage()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HelpPage()
+//    }
+//}
 
 struct helpTitle: ViewModifier {
     func body(content: Content) -> some View {
