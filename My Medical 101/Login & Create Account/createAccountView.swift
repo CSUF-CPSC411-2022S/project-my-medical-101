@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 // CREATE AN ACCOUNT CODE
 
 struct ContentViewNewAccount: View {
@@ -28,18 +26,13 @@ struct ContentViewNewAccount: View {
                  GeometryReader { geometry in
                      VStack {
                          VStack {
-                            // NavigationLink(destination: HelpPage()) {
-                              //   Text("❓")
-                                //     .font(.custom("Courier New", size: 30))
-                                  //   .frame(width: 400, height: 10, alignment: .topTrailing)
-                             //}
                              Text("Create Account")
                                  .bold()
                                  .underline()
                                  .modifier(TopText())
                                  .padding()
-                             Text("Please enter all the information ")
-                             Text("below, as it is required")
+                             Text("Please fill out all the information ")
+                             Text("below")
                                  .padding(.bottom)
                              Text("Account Information:")
                                  .bold()
@@ -64,7 +57,7 @@ struct ContentViewNewAccount: View {
                                  HStack {
                                      Spacer()
                                      Text("DOB: ")
-                                         .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 28))
+                                         .padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 28))
                                      TextField("mm/dd/yyyy", text: $patient.dob)
                                          .modifier(textTypingBox())
                                      Spacer()
@@ -123,19 +116,15 @@ struct ContentViewNewAccount: View {
                      .onAppear(perform: {
                          UITableView.appearance().contentInset.top = -35 })
                      .background(Color.white)
-                        .cornerRadius(10)
-                        .padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 35))
+                     .cornerRadius(10)
+                     .padding(EdgeInsets(top: -30, leading: 35, bottom: 0, trailing: 35))
                  }
              }
-         }
+         }.navigationBarTitleDisplayMode(.inline)
      }
  }
 
-
-
-
 //PAGE 2 OF CREATE ACCOUNT
-
 
 struct ContentViewNewAccount2: View {
     @EnvironmentObject var patient: Patient
@@ -154,11 +143,6 @@ struct ContentViewNewAccount2: View {
                  GeometryReader { geometry in
                      VStack {
                          VStack {
-                            // NavigationLink(destination: HelpPage()) {
-                              //   Text("❓")
-                                //     .font(.custom("Courier New", size: 30))
-                                  //   .frame(width: 400, height: 10, alignment: .topTrailing)
-                             //}
                              Text("Create Account")
                                  .bold()
                                  .underline()
@@ -209,15 +193,7 @@ struct ContentViewNewAccount2: View {
                                  }
                              }
                              
-//                             HStack {
-//                                 Spacer()
-//                                 Text("Insurance: ")
-//                                 TextField("Insurance", text: $insurance)
-//                                 Spacer()
-//                             }
-                             
                              HStack {
-
                                  //NAVIGATION LINK
                                  Section {
                                      Button(action: {
@@ -241,11 +217,11 @@ struct ContentViewNewAccount2: View {
                  }
              }
          }
+         .navigationBarBackButtonHidden(true)
+         .navigationBarHidden(true)
+         .navigationBarTitleDisplayMode(.inline)
      }
  }
-
-
-
 
  struct TopText: ViewModifier {
     func body(content: Content) -> some View {

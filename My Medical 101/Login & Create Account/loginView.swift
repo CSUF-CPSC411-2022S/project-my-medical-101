@@ -4,14 +4,12 @@
 //
 //  Created by Anjali Patel on 2/21/22.
 //
-
 import SwiftUI
 
 // LOG IN PAGE CODE
-
 struct ContentViewLogin: View {
- @State var email: String = ""
- @State var password: String = ""
+    @State var email: String = ""
+    @State var password: String = ""
 
      var body: some View {
          NavigationView {
@@ -88,6 +86,8 @@ struct ContentViewLogin: View {
                  }
              }
          }
+         .navigationBarBackButtonHidden(true)
+         .navigationBarHidden(true)
      }
  }
 
@@ -126,7 +126,6 @@ struct ContentViewLogin: View {
 
 
 // PAGE VIEW
-
 struct contentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentViewLogin()
