@@ -20,7 +20,7 @@ struct upcomingApptView: View {
                     .modifier(LogoText())
                     .padding()
                 VStack {
-                    Text("Appointment 1:")
+                    Text("No upcoming appointments")
                    // Text("Appointment 1: \(appointment.date)")
                     
                 }
