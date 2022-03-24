@@ -105,6 +105,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A43C10227EBFC2F004F3434 /* Home Page */ = {
+			isa = PBXGroup;
+			children = (
+				7AE3B47827E14DA6002CA78C /* HomepageView.swift */,
+				7AE2BCA027C4C2D900102805 /* homePage.swift */,
+			);
+			path = "Home Page";
+			sourceTree = "<group>";
+		};
+		7A43C10327EBFC57004F3434 /* My Medications */ = {
+			isa = PBXGroup;
+			children = (
+				9C8CFC3927DA936A00C191A6 /* myMedicationsView.swift */,
+				9C817B2027E172B300BD36C8 /* myMedications.swift */,
+			);
+			path = "My Medications";
+			sourceTree = "<group>";
+		};
+		7A43C10427EBFC76004F3434 /* Help Page */ = {
+			isa = PBXGroup;
+			children = (
+				9CACDAAB27EADD94003517E9 /* helpPageView.swift */,
+			);
+			path = "Help Page";
+			sourceTree = "<group>";
+		};
+		7A43C10527EBFCAE004F3434 /* My Records */ = {
+			isa = PBXGroup;
+			children = (
+				9C3334B527E959D2001F838B /* recordsView.swift */,
+			);
+			path = "My Records";
+			sourceTree = "<group>";
+		};
 		9C2AE13227EBF65100E0F950 /* Login & Create Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,19 +202,17 @@
 		9C2DDDD827C4BC6200390458 /* My Medical 101 */ = {
 			isa = PBXGroup;
 			children = (
-				9C2AE13527EBF67200E0F950 /* Scheduling Appointments */,
-				9C2AE13427EBF66800E0F950 /* Doctor */,
-				9C2AE13327EBF66000E0F950 /* My Chart */,
-				9C2AE13227EBF65100E0F950 /* Login & Create Account */,
 				9C2DDDD927C4BC6200390458 /* My_Medical_101App.swift */,
-				7AE2BCA027C4C2D900102805 /* homePage.swift */,
-				7AE3B47827E14DA6002CA78C /* HomepageView.swift */,
-				9C817B2027E172B300BD36C8 /* myMedications.swift */,
-				9C8CFC3927DA936A00C191A6 /* myMedicationsView.swift */,
+				9C2AE13227EBF65100E0F950 /* Login & Create Account */,
+				7A43C10227EBFC2F004F3434 /* Home Page */,
+				9C2AE13527EBF67200E0F950 /* Scheduling Appointments */,
+				9C2AE13327EBF66000E0F950 /* My Chart */,
+				7A43C10427EBFC76004F3434 /* Help Page */,
+				9C2AE13427EBF66800E0F950 /* Doctor */,
+				7A43C10327EBFC57004F3434 /* My Medications */,
+				7A43C10527EBFCAE004F3434 /* My Records */,
 				9C2DDDDD27C4BC6400390458 /* Assets.xcassets */,
 				9C2DDDDF27C4BC6400390458 /* Preview Content */,
-				9C3334B527E959D2001F838B /* recordsView.swift */,
-				9CACDAAB27EADD94003517E9 /* helpPageView.swift */,
 			);
 			path = "My Medical 101";
 			sourceTree = "<group>";

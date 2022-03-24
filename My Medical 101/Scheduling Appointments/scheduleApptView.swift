@@ -7,7 +7,6 @@
 import SwiftUI
 import AssetsLibrary
 
-//schedule view
 struct ScheduleView : View {
     @EnvironmentObject var reasonForVisit: ScheduleAppt
     // TODO: time squares (?)
