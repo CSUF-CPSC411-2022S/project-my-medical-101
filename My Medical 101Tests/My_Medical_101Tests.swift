@@ -17,18 +17,18 @@ class My_Medical_101Tests: XCTestCase {
         XCTAssertEqual(newUser.userLogin["NewUser20"], "RandomPassword")
     }
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
+    func testChartInfo() throws {
         var myperson = Chart()
         myperson.person(name: "Brenda", age: 22)
         XCTAssertTrue(myperson.persons["Brenda"] == 22)
+    }
+
+    func testNameChange() throws {
+        let patient = Patient()
+        patient.myName = "Brenda"
+        patient.myName = "Vibha"
+        // verify that the name in the field has been changed
+        XCTAssertEqual(patient.myName, "Vibha")
     }
 
     func testPerformanceExample() throws {
