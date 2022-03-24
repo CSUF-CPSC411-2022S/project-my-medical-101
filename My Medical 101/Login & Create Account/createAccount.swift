@@ -7,6 +7,18 @@
 
 import Foundation
 
-struct CreateAccount {
-    // code here
+class Patient: ObservableObject {
+    @Published var myName: String
+    @Published var dob: String
+    @Published var gender: String
+    @Published var height: String
+    @Published var weight: String
+
+    init() {
+        self.myName = ""
+        self.dob = ""
+        self.gender = ""
+        self.height = ""
+        self.weight = ""
+    }
 }

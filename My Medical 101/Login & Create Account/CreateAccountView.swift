@@ -11,22 +11,6 @@ import SwiftUI
 
 // CREATE AN ACCOUNT CODE
 
-class Patient: ObservableObject {
-    @Published var myName: String
-    @Published var dob: String
-    @Published var gender: String
-    @Published var height: String
-    @Published var weight: String
-
-    init() {
-        self.myName = ""
-        self.dob = ""
-        self.gender = ""
-        self.height = ""
-        self.weight = ""
-    }
-}
-
 struct ContentViewNewAccount: View {
     @EnvironmentObject var patient: Patient
     @State var email: String = ""
@@ -43,11 +27,6 @@ struct ContentViewNewAccount: View {
                  GeometryReader { geometry in
                      VStack {
                          VStack {
-                             NavigationLink(destination: HelpPage()) {
-                                 Text("❓")
-                                     .font(.custom("Courier New", size: 30))
-                                     .frame(width: 400, height: 10, alignment: .topTrailing)
-                             }
                              Text("Create Account")
                                  .bold()
                                  .underline()

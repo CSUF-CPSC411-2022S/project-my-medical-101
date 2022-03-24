@@ -10,20 +10,12 @@ import XCTest
 
 class My_Medical_101Tests: XCTestCase {
     
-    func testAddUser() {
-        var newUser = Login()
-        newUser.loginPage("NewUser20", for: "RandomPassword")
-        //checking for valid information
-        XCTAssertEqual(newUser.userLogin["NewUser20"], "RandomPassword")
-    }
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+//    func testAddUser() {
+//        var newUser = Login()
+//        newUser.loginPage("NewUser20", for: "RandomPassword")
+//        //checking for valid information
+//        XCTAssertEqual(newUser.userLogin["NewUser20"], "RandomPassword")
+//    }
 
     func testExample() throws {
         var myperson = Chart()
@@ -31,11 +23,17 @@ class My_Medical_101Tests: XCTestCase {
         XCTAssertTrue(myperson.persons["Brenda"] == 22)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testApptScheduledMessage() {
+            let message = ScheduleAppt()
+            message.submitButton = true
+            message.generalCheckup = true
+            XCTAssertEqual(message.alertMessage(), "Your appointment has been scheduled!")
+    }
+        
+    func testApptNotScheduledMessage() {
+        let message = ScheduleAppt()
+        message.submitButton = true
+        XCTAssertEqual(message.alertMessage(), "Please select or fill out your reason for visit")
     }
 
 }

@@ -13,41 +13,44 @@ import AssetsLibrary
 struct DocView : View {
     @EnvironmentObject var appointment: ScheduleAppt
     var body: some View {
-        GeometryReader { geometry in
-            VStack{
-                Text("Patients").bold()
-                    .modifier(patientsTitle()).padding(.bottom)
+        NavigationView {
+            GeometryReader { geometry in
                 VStack{
-                    Text("Patient Name: Patient 1 ")
-                    Text("DOB")
-                    Text("\(appointment.date)")
-                    HStack{
-                        Text("Reason for Visit: ")
-                        if appointment.submitButton == true {
-                            if appointment.generalCheckup == true{
-                                Text("General Checkup")
-                            }
-                            else if appointment.followUp == true{
-                                Text("Follow up")
-                            }
-                            else if appointment.refill == true{
-                                Text("Refill")
-                            }
-                            else if appointment.injury == true{
-                                Text("Injury")
-                            }
-                            else if appointment.typedReasonForVisit != ""{
-                                Text("\(appointment.typedReasonForVisit)")
-                            }
-                            else{
-                                Text("Purpose of visit not listed")
+                    Text("Patients").bold()
+                        .modifier(patientsTitle()).padding(.bottom)
+                    VStack{
+                        Text("Patient Name: Patient 1 ")
+                        Text("DOB")
+                        Text("\(appointment.date)")
+                        HStack{
+                            Text("Reason for Visit: ")
+                            if appointment.submitButton == true {
+                                if appointment.generalCheckup == true{
+                                    Text("General Checkup")
+                                }
+                                else if appointment.followUp == true{
+                                    Text("Follow up")
+                                }
+                                else if appointment.refill == true{
+                                    Text("Refill")
+                                }
+                                else if appointment.injury == true{
+                                    Text("Injury")
+                                }
+                                else if appointment.typedReasonForVisit != ""{
+                                    Text("\(appointment.typedReasonForVisit)")
+                                }
+                                else{
+                                    Text("Purpose of visit not listed")
+                                }
                             }
                         }
-                    }
-                    
-                }.modifier(field())
+                        
+                    }.modifier(field())
+                }
             }
         }
+        
     }
 }
 
