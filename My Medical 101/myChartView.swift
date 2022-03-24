@@ -50,7 +50,7 @@ struct ChartView: View {
                        }
                        HStack {
                            VStack {
-                               TextField("Name", text: $patient.myName)
+                               TextField("Name", text: $patient.firstName)
                                    .padding(EdgeInsets(top: 30, leading: 0, bottom: 10, trailing: 10))
                                    .font(.custom("Times New Roman", size: 30))
                                Spacer()
@@ -151,7 +151,7 @@ struct chartTitle: ViewModifier {
 struct chartInfo: ViewModifier {
    func body(content: Content) -> some View {
        content
-           .font(.custom("Times New Romant", size: 20))
+           .font(.custom("Times New Roman", size: 20))
            .frame(width: 300)
            .background(Color("pastelPurple"))
            .cornerRadius(25)

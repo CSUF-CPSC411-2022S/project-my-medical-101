@@ -11,12 +11,18 @@ struct Login {
     
     private(set) var userLogin: [String:String] = [:]
     
-    mutating func loginPage(_ username: String, for password: String) {
-        if username != " "{
-            if let loginInfo = userLogin[username] {
-                userLogin[username] = password
+    mutating func loginPage(_ email: String, for password: String) {
+        if email != " "{
+            if let loginInfo = userLogin[email] {
+                userLogin[email] = password
             }
         }
     }
+    
+  //  if (email == "") {
+    //        var alert = UIAlertView(title: "Blank text field", message: "Please fill in the required information", delegate: //nil, cancelButtonTitle: "OK")
+          //  alert.show()
+            
+        //}
 }
 

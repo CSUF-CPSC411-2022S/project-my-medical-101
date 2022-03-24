@@ -8,5 +8,17 @@
 import Foundation
 
 struct CreateAccount {
-    // code here
-}
+        
+    private(set) var emailCheck: [String:String] = [:]
+        
+    mutating func createAccountPage(_ email: String, for firstName: String) {
+            if email != " "{
+                if let accountInfo = emailCheck[email] {
+                    emailCheck[email] = firstName
+                }
+            }
+        }
+    
+     
+    }
+
