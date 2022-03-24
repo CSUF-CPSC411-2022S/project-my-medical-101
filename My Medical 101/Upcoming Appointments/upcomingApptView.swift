@@ -53,9 +53,6 @@ struct upcomingApptView: View {
     }
 }
 
-
-
-
 struct upcomingApptView_Previews: PreviewProvider {
     static var previews: some View {
         upcomingApptView()

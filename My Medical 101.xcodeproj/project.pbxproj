@@ -133,28 +133,18 @@
 		9C2DDDD827C4BC6200390458 /* My Medical 101 */ = {
 			isa = PBXGroup;
 			children = (
+				9C487B0427EC4C2900284DB2 /* Doctor */,
+				9C487B0527EC4C3100284DB2 /* Help Page */,
+				9C487B0627EC4C3A00284DB2 /* Home Page */,
+				9C487B0727EC4C4300284DB2 /* Login & Create Account */,
+				9C487B0827EC4C4D00284DB2 /* My Chart */,
+				9C487B0927EC4C5400284DB2 /* My Medications */,
+				9C487B0A27EC4C5D00284DB2 /* My Records */,
+				9C487B0B27EC4C6600284DB2 /* Scheduling Appointments */,
+				9C487B0C27EC4E2B00284DB2 /* Upcoming Appointments */,
 				9C2DDDD927C4BC6200390458 /* My_Medical_101App.swift */,
-				7AEC78B627C4C2B5006D4801 /* scheduleAppt.swift */,
-				9CACDAA927EA588C003517E9 /* scheduleApptView.swift */,
-				7A43C0FA27E11B76004F3434 /* helpPageView.swift */,
-				7A43C0FE27E97651004F3434 /* doctorView.swift */,
-				7AE2BC9E27C4C2C800102805 /* loginPage.swift */,
-				9C2DDDDB27C4BC6200390458 /* loginView.swift */,
-				9C817B1E27E1728800BD36C8 /* createAccount.swift */,
-				7AE3B47627E14D90002CA78C /* createAccountView.swift */,
-				7AE3B47E27EC08EA002CA78C /* upcomingApptView.swift */,
-				7AE2BCA027C4C2D900102805 /* homepage.swift */,
-				7AE3B48027EC0907002CA78C /* upcomingAppt.swift */,
-				7AE3B47827E14DA6002CA78C /* homepageView.swift */,
-				9C2DDE0527C4C2CF00390458 /* myChart.swift */,
-				9C817B1A27E16F2A00BD36C8 /* myChartView.swift */,
-				9C817B2027E172B300BD36C8 /* myMedications.swift */,
-				9C8CFC3927DA936A00C191A6 /* myMedicationsView.swift */,
-				9C52248127E13F9F0006402D /* imagePicker.swift */,
 				9C2DDDDD27C4BC6400390458 /* Assets.xcassets */,
 				9C2DDDDF27C4BC6400390458 /* Preview Content */,
-				9C5A441327E1B62D00C16103 /* docHomePage.swift */,
-				9C3334B527E959D2001F838B /* recordsView.swift */,
 			);
 			path = "My Medical 101";
 			sourceTree = "<group>";
@@ -182,6 +172,88 @@
 				9C2DDDF627C4BC6500390458 /* My_Medical_101UITestsLaunchTests.swift */,
 			);
 			path = "My Medical 101UITests";
+			sourceTree = "<group>";
+		};
+		9C487B0427EC4C2900284DB2 /* Doctor */ = {
+			isa = PBXGroup;
+			children = (
+				9C5A441327E1B62D00C16103 /* docHomePage.swift */,
+				7A43C0FE27E97651004F3434 /* doctorView.swift */,
+			);
+			path = Doctor;
+			sourceTree = "<group>";
+		};
+		9C487B0527EC4C3100284DB2 /* Help Page */ = {
+			isa = PBXGroup;
+			children = (
+				7A43C0FA27E11B76004F3434 /* helpPageView.swift */,
+			);
+			path = "Help Page";
+			sourceTree = "<group>";
+		};
+		9C487B0627EC4C3A00284DB2 /* Home Page */ = {
+			isa = PBXGroup;
+			children = (
+				7AE2BCA027C4C2D900102805 /* homepage.swift */,
+				7AE3B47827E14DA6002CA78C /* homepageView.swift */,
+			);
+			path = "Home Page";
+			sourceTree = "<group>";
+		};
+		9C487B0727EC4C4300284DB2 /* Login & Create Account */ = {
+			isa = PBXGroup;
+			children = (
+				7AE2BC9E27C4C2C800102805 /* loginPage.swift */,
+				9C2DDDDB27C4BC6200390458 /* loginView.swift */,
+				9C817B1E27E1728800BD36C8 /* createAccount.swift */,
+				7AE3B47627E14D90002CA78C /* createAccountView.swift */,
+			);
+			path = "Login & Create Account";
+			sourceTree = "<group>";
+		};
+		9C487B0827EC4C4D00284DB2 /* My Chart */ = {
+			isa = PBXGroup;
+			children = (
+				9C52248127E13F9F0006402D /* imagePicker.swift */,
+				9C2DDE0527C4C2CF00390458 /* myChart.swift */,
+				9C817B1A27E16F2A00BD36C8 /* myChartView.swift */,
+			);
+			path = "My Chart";
+			sourceTree = "<group>";
+		};
+		9C487B0927EC4C5400284DB2 /* My Medications */ = {
+			isa = PBXGroup;
+			children = (
+				9C817B2027E172B300BD36C8 /* myMedications.swift */,
+				9C8CFC3927DA936A00C191A6 /* myMedicationsView.swift */,
+			);
+			path = "My Medications";
+			sourceTree = "<group>";
+		};
+		9C487B0A27EC4C5D00284DB2 /* My Records */ = {
+			isa = PBXGroup;
+			children = (
+				9C3334B527E959D2001F838B /* recordsView.swift */,
+			);
+			path = "My Records";
+			sourceTree = "<group>";
+		};
+		9C487B0B27EC4C6600284DB2 /* Scheduling Appointments */ = {
+			isa = PBXGroup;
+			children = (
+				7AEC78B627C4C2B5006D4801 /* scheduleAppt.swift */,
+				9CACDAA927EA588C003517E9 /* scheduleApptView.swift */,
+			);
+			path = "Scheduling Appointments";
+			sourceTree = "<group>";
+		};
+		9C487B0C27EC4E2B00284DB2 /* Upcoming Appointments */ = {
+			isa = PBXGroup;
+			children = (
+				7AE3B47E27EC08EA002CA78C /* upcomingApptView.swift */,
+				7AE3B48027EC0907002CA78C /* upcomingAppt.swift */,
+			);
+			path = "Upcoming Appointments";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
