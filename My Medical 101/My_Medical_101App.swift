@@ -14,7 +14,6 @@ struct My_Medical_101App: App {
     var body: some Scene {
         WindowGroup {
             ContentViewLogin().environmentObject(patient).environmentObject(scheduleAppt)
-            //ScheduleView().environmentObject(scheduleAppt)
         }
     }
 }

@@ -7,114 +7,88 @@
 
 import SwiftUI
 
-
-
 // CREATE AN ACCOUNT CODE
-
-class Patient: ObservableObject {
-    @Published var myName: String
-    @Published var dob: String
-    @Published var gender: String
-    @Published var height: String
-    @Published var weight: String
-
-    init() {
-        self.myName = ""
-        self.dob = ""
-        self.gender = ""
-        self.height = ""
-        self.weight = ""
-    }
-}
 
 struct ContentViewNewAccount: View {
     @EnvironmentObject var patient: Patient
     @State var email: String = ""
-    @State var username: String = ""
     @State var password: String = ""
     @State var phoneNumber: String = ""
     @State var insurance: String = ""
-    @State var showErrorMessage = false
+    @State private var selected = 1
+    //@State var showErrorMessage = false
     
      var body: some View {
          NavigationView {
              ZStack {
-                 Color("pastelBlue").ignoresSafeArea()
+                 Color("pastelBlue")
+                     .ignoresSafeArea()
                  GeometryReader { geometry in
                      VStack {
                          VStack {
-                             NavigationLink(destination: HelpPage()) {
-                                 Text("❓")
-                                     .font(.custom("Courier New", size: 30))
-                                     .frame(width: 400, height: 10, alignment: .topTrailing)
-                             }
                              Text("Create Account")
                                  .bold()
                                  .underline()
                                  .modifier(TopText())
                                  .padding()
-                             Text("Please enter all the information below, as it is required")
-                                 .padding()
+                             Text("Please fill out all the information ")
+                             Text("below")
+                                 .padding(.bottom)
+                             Text("Account Information:")
+                                 .bold()
+                                 .padding(.bottom)
                              Group {
                                  HStack {
                                      Spacer()
-                                     Text("Full name: ")
-                                     TextField("John Smith", text: $patient.myName)
+                                     Text("First name: ")
+                                         .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 10))
+                                     TextField("Ex: John", text: $patient.firstName)
+                                         .modifier(textTypingBox())
+                                     Spacer()
+                                 }
+                                 HStack {
+                                     Spacer()
+                                     Text("Last name: ")
+                                         .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 12))
+                                     TextField("Ex: Smith", text: $patient.lastName)
+                                         .modifier(textTypingBox())
                                      Spacer()
                                  }
                                  HStack {
                                      Spacer()
                                      Text("DOB: ")
+                                         .padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 28))
                                      TextField("mm/dd/yyyy", text: $patient.dob)
+                                         .modifier(textTypingBox())
                                      Spacer()
                                  }
                                  HStack {
                                      Spacer()
                                      Text("Gender: ")
-                                     TextField("", text: $patient.gender)
+                                         .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 16))
+                                     TextField("Gender", text: $patient.gender)
+                                         .modifier(textTypingBox())
                                      Spacer()
                                  }
                                  HStack {
                                      Spacer()
                                      Text("Height: ")
-                                     TextField("5'5", text: $patient.height)
+                                         .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 16))
+                                     TextField("Ex: 5'5", text: $patient.height)
+                                         .modifier(textTypingBox())
                                      Spacer()
                                  }
                                  HStack {
                                      Spacer()
                                      Text("Weight: ")
-                                     TextField("", text: $patient.weight)
+                                         .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 16))
+                                     TextField("Ex: lbs", text: $patient.weight)
+                                         .modifier(textTypingBox())
                                      Spacer()
                                  }
+                              
                              }
                              
-                             Group {
-                                 HStack {
-                                     Spacer()
-                                     Text("Email: ")
-                                     TextField("Email", text: $email)
-                                     Spacer()
-                                 }
-                                 HStack {
-                                     Spacer()
-                                     Text("Password: ")
-                                     TextField("Password", text: $password)
-                                     Spacer()
-                                 }
-                                 HStack {
-                                     Spacer()
-                                     Text("Phone Number: ")
-                                     TextField("Phone Number", text: $phoneNumber)
-                                     Spacer()
-                                 }
-                             }
-                             
-                             HStack {
-                                 Spacer()
-                                 Text("Username: ")
-                                 TextField("Username", text: $username)
-                                 Spacer()
-                             }
 //                             HStack {
 //                                 Spacer()
 //                                 Text("Insurance: ")
@@ -129,28 +103,129 @@ struct ContentViewNewAccount: View {
                                      Button(action: {
 
                                      }) {
+                                         NavigationLink(destination: ContentViewNewAccount2()) {
+                                             Text("Continue")
+                                                 .modifier(CreateButtonText())
+                                            }
+                                        }.padding(.top)
+                                 }.disabled(patient.firstName.isEmpty || patient.lastName.isEmpty || patient.dob.isEmpty || patient.gender.isEmpty || patient.height.isEmpty || patient.weight.isEmpty)
+                            }
+                         }
+                         Spacer()
+                     }
+                     .onAppear(perform: {
+                         UITableView.appearance().contentInset.top = -35 })
+                     .background(Color.white)
+                     .cornerRadius(10)
+                     .padding(EdgeInsets(top: -30, leading: 35, bottom: 0, trailing: 35))
+                 }
+             }
+         }.navigationBarTitleDisplayMode(.inline)
+     }
+ }
+
+//PAGE 2 OF CREATE ACCOUNT
+struct ContentViewNewAccount2: View {
+    @EnvironmentObject var patient: Patient
+    @State var email: String = ""
+    @State var password: String = ""
+    @State var phoneNumber: String = ""
+   // @State var insurance: String = ""
+    @State private var selected = 1
+    //@State var showErrorMessage = false
+    
+     var body: some View {
+         NavigationView {
+             ZStack {
+                 Color("pastelBlue")
+                     .ignoresSafeArea()
+                 GeometryReader { geometry in
+                     VStack {
+                         VStack {
+                             Text("Create Account")
+                                 .bold()
+                                 .underline()
+                                 .modifier(TopText())
+                                 .padding()
+                             Text("Please enter all the information ")
+                             Text("below, as it is required")
+                                 .padding(.bottom)
+                             Text("Login Information:")
+                                 .bold()
+                                 .padding(.bottom)
+                             
+                             Group {
+                                 HStack {
+                                     Spacer()
+                                     Text("Email: ")
+                                         .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 18))
+                                     TextField("Email", text: $email)
+                                         .modifier(textTypingBox())
+                                     Spacer()
+                                 }
+                                 HStack {
+                                     Spacer()
+                                     Text("Password: ")
+                                         .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 8))
+                                     TextField("Password", text: $password)
+                                         .modifier(textTypingBox())
+                                     Spacer()
+                                 }
+                                 HStack {
+                                     Spacer()
+                                     Text("Phone Number: ")
+                                         .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 8))
+                                     TextField("Phone Number", text: $phoneNumber)
+                                         .modifier(textTypingBox())
+                                     Spacer()
+                                 }
+                                 VStack{
+                                     Text("Pick if you are a patient or a doctor:")
+                                         .padding(.top)
+                                     Picker(selection: $selected, label: Text("Pick if you are a patient or a doctor:")) {
+                                                     Text("Patient or Doctor").tag(1)
+                                                     Text("Patient").tag(2)
+                                                     Text("Doctor").tag(3)
+                                                 }
+                                                // .pickerStyle(.radioGroup)
+                                               //  .horizontalRadioGroupLayout()
+                                 }
+                             }
+                             
+                             HStack {
+                                 //NAVIGATION LINK
+                                 Section {
+                                     Button(action: {
+
+                                     }) {
                                          NavigationLink(destination: ContentViewHomepage()) {
                                              Text("Create my Account")
                                                  .modifier(CreateButtonText())
                                             }.navigationBarBackButtonHidden(true)
                                         }.padding(.top)
-                                 }.disabled(email.isEmpty || username.isEmpty || password.isEmpty || phoneNumber.isEmpty)
+                                 }.disabled(email.isEmpty || password.isEmpty || phoneNumber.isEmpty)
                             }
-                         }.frame(height: geometry.size.height / 1.25)
+                         }
                          Spacer()
                      }
+                     .onAppear(perform: {
+                         UITableView.appearance().contentInset.top = -35 })
+                     .background(Color.white)
+                        .cornerRadius(10)
+                        .padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 35))
                  }
              }
          }
          .navigationBarBackButtonHidden(true)
          .navigationBarHidden(true)
+         .navigationBarTitleDisplayMode(.inline)
      }
  }
 
  struct TopText: ViewModifier {
     func body(content: Content) -> some View {
          content
-            .font(.custom("Courier New", size: 30))
+            .font(.custom("Times New Roman", size: 25))
             .foregroundColor(Color.black)
             .padding()
             .cornerRadius(10)
@@ -160,17 +235,28 @@ struct ContentViewNewAccount: View {
  struct CreateButtonText: ViewModifier {
      func body(content: Content) -> some View {
          content
-            .font(.custom("Courier New", size: 22))
+             .frame(width: 200, height: 30)
+            .font(.custom("Times New Roman", size: 22))
             .foregroundColor(Color.black)
-            .padding()
-            .background(Color.white)
-            .cornerRadius(10)
+            .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
+            .background(Color("pastelBlue"))
+            .cornerRadius(40)
     }
 }
 
-struct NewAccount_Previews: PreviewProvider {
-   static var previews: some View {
-       ContentViewNewAccount()
+struct textTypingBox: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .background(Color.gray.opacity(0.1))
+            .cornerRadius(40)
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 20))
+            .frame(width: 200, height: 50)
    }
 }
 
+struct Previews_CreateAccountView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentViewNewAccount()
+    }
+}

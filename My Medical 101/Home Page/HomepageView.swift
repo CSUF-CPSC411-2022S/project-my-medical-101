@@ -26,7 +26,7 @@ struct ContentViewHomepage: View {
                         .padding(EdgeInsets(top: -60, leading: 20, bottom: 0, trailing: 20))
                     HStack {
                         Spacer()
-                        Text("Welcome \(patient.myName)!")
+                        Text("Welcome \(patient.firstName)!")
                             .font(.custom("Times New Roman", size: 25))
                             .bold()
                         Spacer()

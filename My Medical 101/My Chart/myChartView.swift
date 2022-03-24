@@ -19,9 +19,7 @@ struct ChartView: View {
         NavigationView {
             GeometryReader { geometry in
                 VStack {
-                    Section (header: Text("My Chart").modifier(chartTitle())) {
-                        
-                    }
+                    Section (header: Text("My Chart").modifier(chartTitle())) { }
                     Group {
                         HStack {
                             ZStack(alignment: .bottomTrailing) {
@@ -37,8 +35,8 @@ struct ChartView: View {
                                     } else {
                                         Image("imagePlaceholder")
                                             .resizable()
-                                            .frame(width: 120, height: 120)
                                             .clipShape(Circle())
+                                            .frame(width: 120, height: 120)    
                                     }
                                 })
                                 Image(systemName: "plus")
@@ -51,13 +49,18 @@ struct ChartView: View {
                             }
                             HStack {
                                 VStack {
-                                    TextField("Name", text: $patient.myName)
-                                        .padding(EdgeInsets(top: 30, leading: 0, bottom: 10, trailing: 10))
-                                        .font(.custom("Times New Roman", size: 30))
+                                    HStack {
+                                        TextField("First Name", text: $patient.firstName)
+                                            .padding(EdgeInsets(top: 30, leading: 0, bottom: 10, trailing: 0))
+                                            .font(.custom("Times New Roman", size: 30))
+                                        TextField("Last Name", text: $patient.lastName)
+                                            .padding(EdgeInsets(top: 30, leading: -30, bottom: 10, trailing: 10))
+                                            .font(.custom("Times New Roman", size: 30))
+                                    }
                                     Spacer()
                                     HStack {
                                         Text("DOB: \(patient.dob)")
-                                            .padding(5)
+                                            .padding(EdgeInsets(top: 5, leading: -70, bottom: 10, trailing: 10))
                                             .font(.custom("Times New Roman", size: 15))
                                     }
                                 }
