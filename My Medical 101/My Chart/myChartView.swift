@@ -136,9 +136,7 @@ struct ChartView: View {
                 }.frame(height: geometry.size.height/1.5)
             }
         }
-//        .navigationBarBackButtonHidden(true)
-//        .navigationBarHidden(true)
-   }
+    }
 }
 
 struct chartTitle: ViewModifier {
