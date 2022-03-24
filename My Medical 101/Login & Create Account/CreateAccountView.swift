@@ -142,6 +142,8 @@ struct ContentViewNewAccount: View {
                  }
              }
          }
+         .navigationBarBackButtonHidden(true)
+         .navigationBarHidden(true)
      }
  }
 

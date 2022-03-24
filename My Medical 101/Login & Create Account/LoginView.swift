@@ -87,6 +87,8 @@ struct ContentViewLogin: View {
                  }
              }
          }
+         .navigationBarBackButtonHidden(true)
+         .navigationBarHidden(true)
      }
  }
 
