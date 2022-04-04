@@ -12,11 +12,12 @@ struct ScheduleView : View {
     // TODO: time squares (?)
         @State var submitButtonClicked = false
         @State var message: String = ""
+    @State var timeInterval: [TimeInterval] = [2.0,12.0]
         
         let dateRange: ClosedRange<Date> = {
             let calendar = Calendar.current
-            let startComponents = DateComponents(year: 2022, month: 1, day: 1)
-            let endComponents = DateComponents(year: 2022, month: 12, day: 31, hour: 5)
+            let startComponents = DateComponents(hour: 9)
+            let endComponents = DateComponents(hour: 17)
             return calendar.date(from:startComponents)!
                 ...
                 calendar.date(from:endComponents)!
@@ -29,13 +30,23 @@ struct ScheduleView : View {
                     Text("Schedule Your Appointment").bold()
                         .modifier(scheduleAppttitle()).padding(.bottom)
                     Text("1. Choose a time between 8 a.m. - 5 p.m. \n2. Then, select the reason for your visit or fill in your reason in the text box below.").padding(.horizontal).modifier(explanation())
-                    DatePicker(
-                        "",
-                        selection: $reasonForVisit.date,
-                         in: dateRange,
-                        displayedComponents: [.date, .hourAndMinute]
-                    ).padding(.all).frame(width: 70.0, height: 100.0).modifier(dateField())
-
+                    HStack{
+                        // date
+                        DatePicker(
+                            "",
+                            selection: $reasonForVisit.date,
+                            in: Date.now..., // cant pick dates before today
+                            displayedComponents: [.date]
+                        )
+                        // time
+                        DatePicker(
+                            "",
+                            selection: $reasonForVisit.time,
+                            in: dateRange,
+                            displayedComponents: [.hourAndMinute]
+                        )
+                    }.padding(.all).frame(width: 70.0, height: 100.0).modifier(dateField())
+                    
                     VStack {
                         Text("Reason for Visit: ").font(.custom("Times New Roman", size: 20)).bold()
                             .frame(height: 45.0)
@@ -199,3 +210,14 @@ struct ButtonClicked: ViewModifier{
             .cornerRadius(10)
     }
 }
+
+extension Formatter {
+    static let time: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = .init(identifier: "em_US_POSIX")
+        formatter.dateFormat = "HH:mm"
+        return formatter
+    }()
+}
+
+func addSubview(_ view: UIView){}

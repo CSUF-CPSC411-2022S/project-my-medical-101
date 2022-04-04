@@ -15,6 +15,7 @@ class ScheduleAppt: ObservableObject {
     @Published var typedReasonForVisit: String = ""
     @Published var submitButton: Bool = false
     @Published var date = Date()
+    @Published var time = Date()
     @Published var messageDisplayed: String = ""
     
     init(){
@@ -25,6 +26,7 @@ class ScheduleAppt: ObservableObject {
         self.typedReasonForVisit = ""
         self.submitButton = false
         self.date = Date()
+        self.time = Date()
         self.messageDisplayed = ""
     }
     
