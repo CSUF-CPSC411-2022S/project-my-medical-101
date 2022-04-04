@@ -9,7 +9,6 @@ import AssetsLibrary
 
 struct ScheduleView : View {
     @EnvironmentObject var reasonForVisit: ScheduleAppt
-    // TODO: time squares (?)
         @State var submitButtonClicked = false
         @State var message: String = ""
     @State var timeInterval: [TimeInterval] = [2.0,12.0]

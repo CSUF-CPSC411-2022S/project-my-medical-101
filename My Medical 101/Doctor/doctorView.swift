@@ -21,7 +21,9 @@ struct DocView : View {
                     VStack{
                         Text("Patient Name: Patient 1 ")
                         Text("DOB")
-                        Text("\(appointment.date)")
+                        // TODO: need to store date and time separately 
+                        Text("\(appointment.date) ")
+                        Text("\(appointment.time)")
                         HStack{
                             Text("Reason for Visit: ")
                             if appointment.submitButton == true {
