@@ -97,7 +97,7 @@ struct ChartView: View {
 
                         Group {
                             HStack {
-                                NavigationLink(destination: Medications()) {
+                                NavigationLink(destination: MedicationsView()) {
                                     Text("Medications")
                                         .padding(20)
                                     Text(">")

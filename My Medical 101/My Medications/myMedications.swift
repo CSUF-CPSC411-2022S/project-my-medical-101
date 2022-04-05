@@ -7,6 +7,14 @@
 
 import Foundation
 
-struct myMedications {
-    // code here
+class Medication: ObservableObject, Identifiable {
+    @Published var name: String
+    @Published var dosage: String
+    @Published var freq: String
+    
+    init() {
+        self.name = ""
+        self.dosage = ""
+        self.freq = ""
+    }
 }

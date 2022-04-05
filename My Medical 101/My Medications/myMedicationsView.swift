@@ -8,25 +8,39 @@
 import Foundation
 import SwiftUI
 
-struct Medications: View {
+struct MedicationsView: View {
+    @EnvironmentObject var patient: Patient
+    @EnvironmentObject var medication: Medication
     var body: some View {
         VStack {
-            Text("My Medications")
-                .font(.custom("Marker Felt", size:50))
-                .foregroundColor(Color.black)
-                .padding(EdgeInsets(top: 100, leading: 20, bottom: 50, trailing: 20))
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color("pastelBlue"))
-            HStack {
-                
+            VStack {
+                Text("My Medications")
+                    .font(.custom("Marker Felt", size:50))
+                    .foregroundColor(Color.black)
+                    .padding(EdgeInsets(top: 100, leading: 20, bottom: 50, trailing: 20))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color("pastelBlue"))
             }
-            Text("Welcome to the medications page. Currently the Doctor has not prescribed you anything. Come back later")
+            VStack {
+                Text("List of Medications")
+                Spacer()
+                VStack {
+                    if !patient.meds.isEmpty {
+                        ForEach(patient.meds) {
+                            med in
+                            VStack {
+                                HStack {
+                                    Text("\(med.name) (\(med.dosage))")
+                                }
+                                Text("\(med.freq)")
+                            }
+                        }
+                    } else {
+                        Text("No medications prescribed at the moment.\nCome back later.")
+                        Spacer()
+                    }
+                }
+            }
         }
-    }
-}
-
-struct MedicationsView_Previews: PreviewProvider {
-    static var previews: some View {
-        Medications()
     }
 }

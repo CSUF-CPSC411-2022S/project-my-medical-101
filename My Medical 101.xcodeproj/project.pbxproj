@@ -31,6 +31,7 @@
 		9C8CFC3A27DA936A00C191A6 /* myMedicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CFC3927DA936A00C191A6 /* myMedicationsView.swift */; };
 		9CACDAAA27EA588C003517E9 /* scheduleApptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CACDAA927EA588C003517E9 /* scheduleApptView.swift */; };
 		9CACDAAC27EADD94003517E9 /* helpPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CACDAAB27EADD94003517E9 /* helpPageView.swift */; };
+		9CC6D89227F58B2C00C09CA8 /* patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6D89127F58B2C00C09CA8 /* patient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		9C8CFC3927DA936A00C191A6 /* myMedicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myMedicationsView.swift; sourceTree = "<group>"; };
 		9CACDAA927EA588C003517E9 /* scheduleApptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scheduleApptView.swift; sourceTree = "<group>"; };
 		9CACDAAB27EADD94003517E9 /* helpPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpPageView.swift; sourceTree = "<group>"; };
+		9CC6D89127F58B2C00C09CA8 /* patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = patient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 		9C2DDDDF27C4BC6400390458 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				9CC6D89127F58B2C00C09CA8 /* patient.swift */,
 				9C2DDDE027C4BC6400390458 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -380,6 +383,7 @@
 				9C8CFC3A27DA936A00C191A6 /* myMedicationsView.swift in Sources */,
 				9C52248227E13F9F0006402D /* imagePicker.swift in Sources */,
 				9C2DDDDC27C4BC6200390458 /* LoginView.swift in Sources */,
+				9CC6D89227F58B2C00C09CA8 /* patient.swift in Sources */,
 				9C2DDDDA27C4BC6200390458 /* My_Medical_101App.swift in Sources */,
 				9C2DDE0627C4C2CF00390458 /* myChart.swift in Sources */,
 				7AE3B47927E14DA7002CA78C /* HomepageView.swift in Sources */,

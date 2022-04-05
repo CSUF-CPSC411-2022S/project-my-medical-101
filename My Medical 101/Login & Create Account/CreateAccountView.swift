@@ -108,6 +108,7 @@ struct ContentViewNewAccount: View {
                                                  .modifier(CreateButtonText())
                                             }
                                         }.padding(.top)
+                                         .navigationBarBackButtonHidden(true)
                                  }.disabled(patient.firstName.isEmpty || patient.lastName.isEmpty || patient.dob.isEmpty || patient.gender.isEmpty || patient.height.isEmpty || patient.weight.isEmpty)
                             }
                          }
@@ -121,6 +122,7 @@ struct ContentViewNewAccount: View {
                  }
              }
          }.navigationBarTitleDisplayMode(.inline)
+             .navigationBarBackButtonHidden(true)
      }
  }
 
