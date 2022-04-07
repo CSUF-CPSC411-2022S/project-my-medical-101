@@ -17,4 +17,5 @@ class Medication: ObservableObject, Identifiable {
         self.dosage = ""
         self.freq = ""
     }
+    
 }

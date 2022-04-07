@@ -25,10 +25,21 @@ class My_Medical_101Tests: XCTestCase {
 
     func testNameChange() throws {
         let patient = Patient()
-        patient.myName = "Brenda"
-        patient.myName = "Vibha"
+        patient.firstName = "Brenda"
+        patient.firstName = "Vibha"
         // verify that the name in the field has been changed
-        XCTAssertEqual(patient.myName, "Vibha")
+        XCTAssertEqual(patient.firstName, "Vibha")
+    }
+    
+    func testMeds() throws {
+        let patient = Patient()
+        patient.firstName = "Brenda"
+        let cetrizine = Medication()
+        cetrizine.name = "cetrizine"
+        cetrizine.dosage = "30 mg"
+        cetrizine.freq = "Twice daily"
+        patient.meds.append(cetrizine)
+        XCTAssertNotNil(patient.meds)
     }
 
     func testPerformanceExample() throws {

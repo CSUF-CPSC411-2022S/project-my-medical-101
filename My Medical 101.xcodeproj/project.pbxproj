@@ -170,6 +170,7 @@
 		9C2DDDD827C4BC6200390458 /* My Medical 101 */ = {
 			isa = PBXGroup;
 			children = (
+				9C2DDDD927C4BC6200390458 /* My_Medical_101App.swift */,
 				9C487B0327EC487600284DB2 /* My Medications */,
 				9C487B0227EC485800284DB2 /* My Records */,
 				9C487B0127EC484F00284DB2 /* Home Page */,
@@ -178,7 +179,6 @@
 				9C2AE13427EBF66800E0F950 /* Doctor */,
 				9C2AE13327EBF66000E0F950 /* My Chart */,
 				9C2AE13227EBF65100E0F950 /* Login & Create Account */,
-				9C2DDDD927C4BC6200390458 /* My_Medical_101App.swift */,
 				9C2DDDDD27C4BC6400390458 /* Assets.xcassets */,
 				9C2DDDDF27C4BC6400390458 /* Preview Content */,
 			);
