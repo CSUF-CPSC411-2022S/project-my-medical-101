@@ -12,6 +12,8 @@ import AssetsLibrary
 // TODO: Continue working on View
 struct DocView : View {
     @EnvironmentObject var appointment: ScheduleAppt
+    @EnvironmentObject var patientInformation: myDocHomePage
+    
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
@@ -26,26 +28,7 @@ struct DocView : View {
                         Text("\(appointment.time)")
                         HStack{
                             Text("Reason for Visit: ")
-                            if appointment.submitButton == true {
-                                if appointment.generalCheckup == true{
-                                    Text("General Checkup")
-                                }
-                                else if appointment.followUp == true{
-                                    Text("Follow up")
-                                }
-                                else if appointment.refill == true{
-                                    Text("Refill")
-                                }
-                                else if appointment.injury == true{
-                                    Text("Injury")
-                                }
-                                else if appointment.typedReasonForVisit != ""{
-                                    Text("\(appointment.typedReasonForVisit)")
-                                }
-                                else{
-                                    Text("Purpose of visit not listed")
-                                }
-                            }
+                            // work on using variables from the class
                         }
                         
                     }.modifier(field())
