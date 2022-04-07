@@ -9,13 +9,6 @@ import XCTest
 @testable import My_Medical_101
 
 class My_Medical_101Tests: XCTestCase {
-    
-//    func testAddUser() {
-//        var newUser = Login()
-//        newUser.loginPage("NewUser20", for: "RandomPassword")
-//        //checking for valid information
-//        XCTAssertEqual(newUser.userLogin["NewUser20"], "RandomPassword")
-//    }
 
     func testExample() throws {
         var myperson = Chart()
@@ -34,6 +27,13 @@ class My_Medical_101Tests: XCTestCase {
         let message = ScheduleAppt()
         message.submitButton = true
         XCTAssertEqual(message.alertMessage(), "Please select or fill out your reason for visit")
+    }
+    
+    func testDoctorHomePage(){
+        let docPage = myDocHomePage()
+        let appt = ScheduleAppt()
+        appt.generalCheckup = true
+        XCTAssertEqual(docPage.reasonForVisitText(), "General Checkup")
     }
 
 }
