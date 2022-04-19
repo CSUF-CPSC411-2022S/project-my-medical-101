@@ -10,3 +10,11 @@ import Foundation
 struct myDocHomePage {
     // code here
 }
+
+class Doctor: ObservableObject {
+    @Published var patients: [Patient] = []
+    
+    init() {
+        
+    }
+}

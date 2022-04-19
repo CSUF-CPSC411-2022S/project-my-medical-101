@@ -27,15 +27,3 @@ struct HelpPage : View{
         Spacer()
     }
 }
-
-struct HelpText: ViewModifier {
-func body(content: Content) -> some View {
-    content
-       .font(.custom("Courier New", size: 25))
-       .foregroundColor(Color.black)
-       .padding()
-       .background(Color("pastelBlue"))
-       .cornerRadius(10)
-}
-}
-
