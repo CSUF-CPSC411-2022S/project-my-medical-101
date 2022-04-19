@@ -16,6 +16,21 @@ class My_Medical_101Tests: XCTestCase {
         //checking for valid information
         XCTAssertEqual(newUser.userLogin["NewUser20"], "RandomPassword")
     }
+    
+    func testWrongUser() {
+            var newUser2 = Login()
+            newUser2.loginPage("NewUser20", for: "RandomPassword")
+            //checking for invalid username
+            XCTAssertEqual(newUser2.userLogin["NewUserWrong"], nil)
+    }
+    
+    func testWrongPassword() {
+        var newUser3 = Login()
+        newUser3.loginPage("NewUser20", for: "RandomPassword")
+        //checking for invalid password
+        XCTAssertEqual(newUser3.userLogin["nil"], "WrongPassword")
+    }
+
 
     func testChartInfo() throws {
         var myperson = Chart()

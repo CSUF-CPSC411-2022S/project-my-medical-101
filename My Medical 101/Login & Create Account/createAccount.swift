@@ -40,3 +40,16 @@ class Patient: ObservableObject {
     }
     
 }
+
+//struct CreateAccount {
+//
+//    private(set) var emailCheck: [String:String] = [:]
+//
+//    mutating func createAccountPage(_ email: String, for firstName: String) {
+//        if email != " "{
+//            if let accountInfo = emailCheck[email] {
+//                emailCheck[email] = firstName
+//            }
+//        }
+//    }
+//}

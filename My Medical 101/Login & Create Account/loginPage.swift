@@ -18,5 +18,11 @@ struct Login {
             }
         }
     }
+    
+//  if (email == "") {
+//      var alert = UIAlertView(title: "Blank text field", message: "Please fill in the required information", delegate: //nil, cancelButtonTitle: "OK")
+//      alert.show()
+//  }
+
 }
 
