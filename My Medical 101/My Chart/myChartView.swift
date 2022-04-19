@@ -129,38 +129,10 @@ struct ChartView: View {
                         
                     }
                     Spacer()
-                    HStack {
-                        NavigationLink(destination: HelpPage()) {
-                            Text("Help Page")
-                                .padding(EdgeInsets(top: 50, leading: 170, bottom: 5, trailing: 2))
-                            Spacer()
-                        }
-                    }
                 }.frame(height: geometry.size.height/1.5)
             }
         }
     }
-}
-
-struct chartTitle: ViewModifier {
-   func body(content: Content) -> some View {
-       content
-           .font(.custom("Times New Roman", size:60))
-           .foregroundColor(Color.black)
-           .padding(EdgeInsets(top: 100, leading: 20, bottom: 50, trailing: 20))
-           .frame(maxWidth: .infinity, maxHeight: .infinity)
-           .background(Color("pastelBlue"))
-   }
-}
-
-struct chartInfo: ViewModifier {
-   func body(content: Content) -> some View {
-       content
-           .font(.custom("Times New Romant", size: 20))
-           .frame(width: 300)
-           .background(Color("pastelPurple"))
-           .cornerRadius(25)
-   }
 }
 
 struct Information: View {

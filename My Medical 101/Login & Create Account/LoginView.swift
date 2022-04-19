@@ -58,7 +58,7 @@ struct ContentViewLogin: View {
                                      
                                  }) {
                                      //NAVIGATION LINK
-                                     NavigationLink(destination: ContentViewHomepage()) {
+                                     NavigationLink(destination: ContentView()) {
                                    Text("Login")
                                      .modifier(LoginButtonText())
                                      }.navigationBarBackButtonHidden(true)
@@ -90,39 +90,6 @@ struct ContentViewLogin: View {
          .navigationBarHidden(true)
      }
  }
-
-
- struct LogoText: ViewModifier {
-    func body(content: Content) -> some View {
-         content
-            .font(.custom("Times New Roman", size: 30))
-            .foregroundColor(Color.black)
-            .padding()
-            .background(Color.white)
-            .cornerRadius(10)
-    }
- }
-
- struct TopTitleText: ViewModifier {
-    func body(content: Content) -> some View {
-         content
-            .font(.custom("Times New Roman", size: 30))
-            .foregroundColor(Color.black)
-            .padding()
-    }
- }
-
- struct LoginButtonText: ViewModifier {
-     func body(content: Content) -> some View {
-         content
-             .frame(width: 200, height: 30)
-            .font(.custom("Times New Roman", size: 22))
-            .foregroundColor(Color.black)
-            .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
-            .background(Color("pastelBlue"))
-            .cornerRadius(40)
-    }
-}
 
 
 // PAGE VIEW

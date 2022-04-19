@@ -89,13 +89,6 @@ struct ContentViewNewAccount: View {
                               
                              }
                              
-//                             HStack {
-//                                 Spacer()
-//                                 Text("Insurance: ")
-//                                 TextField("Insurance", text: $insurance)
-//                                 Spacer()
-//                             }
-                             
                              HStack {
 
                                  //NAVIGATION LINK
@@ -200,7 +193,7 @@ struct ContentViewNewAccount2: View {
                                      Button(action: {
 
                                      }) {
-                                         NavigationLink(destination: ContentViewHomepage()) {
+                                         NavigationLink(destination: ContentView()) {
                                              Text("Create my Account")
                                                  .modifier(CreateButtonText())
                                             }.navigationBarBackButtonHidden(true)
@@ -223,39 +216,6 @@ struct ContentViewNewAccount2: View {
          .navigationBarTitleDisplayMode(.inline)
      }
  }
-
- struct TopText: ViewModifier {
-    func body(content: Content) -> some View {
-         content
-            .font(.custom("Times New Roman", size: 25))
-            .foregroundColor(Color.black)
-            .padding()
-            .cornerRadius(10)
-    }
- }
-
- struct CreateButtonText: ViewModifier {
-     func body(content: Content) -> some View {
-         content
-             .frame(width: 200, height: 30)
-            .font(.custom("Times New Roman", size: 22))
-            .foregroundColor(Color.black)
-            .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
-            .background(Color("pastelBlue"))
-            .cornerRadius(40)
-    }
-}
-
-struct textTypingBox: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .padding()
-            .background(Color.gray.opacity(0.1))
-            .cornerRadius(40)
-            .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 20))
-            .frame(width: 200, height: 50)
-   }
-}
 
 struct Previews_CreateAccountView_Previews: PreviewProvider {
     static var previews: some View {
