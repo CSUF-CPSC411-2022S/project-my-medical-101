@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct upcomingApptView: View {
-    @EnvironmentObject var appointment: ScheduleAppt
+    @EnvironmentObject var appointmentShown: ScheduleAppt
     
     var body: some View {
         ZStack {
@@ -20,12 +20,16 @@ struct upcomingApptView: View {
                     .modifier(LogoText())
                     .padding()
                 VStack {
-                    Text("No upcoming appointments")
-                   // Text("Appointment 1: \(appointment.date)")
+                    Text("Appointments will be shown here")
+                    Text("\(appointmentShown.date)")
+                        .font(.custom("Times New Roman", size: 20))
+                        .background(Color.gray)
+                        .cornerRadius(8)
+                        .padding(EdgeInsets(top: 50, leading: 50, bottom: 20, trailing: 50))
                     
                 }
-                .font(.custom("Times New Roman", size: 30))
-                .frame(width: 400, height: 300)
+                .font(.custom("Times New Roman", size: 22))
+                .frame(width: 200, height: 300)
                 .background(Color.white)
                 .cornerRadius(10)
                 .padding(EdgeInsets(top: 0, leading: 50, bottom: 20, trailing: 50))

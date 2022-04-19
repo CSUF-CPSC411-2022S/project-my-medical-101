@@ -9,7 +9,7 @@ import Foundation
 
 struct Login {
     
-    private(set) var userLogin: [String:String] = [:]
+    private(set) var userLogin: [String:String] = ["random@gmail.com":"randompassword", "anotheremail@gmail.com":"anotherpassword2"]
     
     mutating func loginPage(_ email: String, for password: String) {
         if email != " "{
