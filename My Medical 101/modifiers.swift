@@ -219,3 +219,26 @@ struct HelpText: ViewModifier {
            .cornerRadius(10)
     }
 }
+
+// DOCTOR MODIFIERS
+struct patientsTitle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("Times New Roman", size:30))
+            .foregroundColor(Color.black)
+            .frame(maxWidth: .infinity, maxHeight: 100)
+            .background(Color("pastelBlue"))
+    }
+}
+
+struct field: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("Times New Roman", size: 12))
+            .frame(width: 360)
+            .background(Color("pastelPurple"))
+            .cornerRadius(25)
+    }
+}
+
+

@@ -6,35 +6,46 @@
 //
 import SwiftUI
 import AssetsLibrary
-
+ 
 struct ScheduleView : View {
     @EnvironmentObject var reasonForVisit: ScheduleAppt
-    // TODO: time squares (?)
-        @State var submitButtonClicked = false
-        @State var message: String = ""
+    @State var submitButtonClicked = false
+    @State var message: String = ""
+    @State var timeInterval: [TimeInterval] = [2.0,12.0]
         
         let dateRange: ClosedRange<Date> = {
             let calendar = Calendar.current
-            let startComponents = DateComponents(year: 2022, month: 1, day: 1)
-            let endComponents = DateComponents(year: 2022, month: 12, day: 31, hour: 5)
+            let startComponents = DateComponents(hour: 9)
+            let endComponents = DateComponents(hour: 17)
             return calendar.date(from:startComponents)!
                 ...
                 calendar.date(from:endComponents)!
         }()
-
+ 
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack {
-                    Text("Schedule Your Appointment").modifier(Headers())
+                    Text("Schedule Your Appointment").bold()
+                        .modifier(Headers()).padding(.bottom)
                     Text("1. Choose a time between 8 a.m. - 5 p.m. \n2. Then, select the reason for your visit or fill in your reason in the text box below.").padding(.horizontal).modifier(explanation())
-                    DatePicker(
-                        "",
-                        selection: $reasonForVisit.date,
-                         in: dateRange,
-                        displayedComponents: [.date, .hourAndMinute]
-                    ).padding(.all).frame(width: 70.0, height: 100.0).modifier(dateField())
-
+                    HStack{
+                        // date
+                        DatePicker(
+                            "",
+                            selection: $reasonForVisit.date,
+                            in: Date.now..., // cant pick dates before today
+                            displayedComponents: [.date]
+                        )
+                        // time
+                        DatePicker(
+                            "",
+                            selection: $reasonForVisit.time,
+                            in: dateRange,
+                            displayedComponents: [.hourAndMinute]
+                        )
+                    }.padding(.all).frame(width: 70.0, height: 100.0).modifier(dateField())
+                    
                     VStack {
                         Text("Reason for Visit: ").font(.custom("Times New Roman", size: 20)).bold()
                             .frame(height: 45.0)
@@ -96,7 +107,7 @@ struct ScheduleView : View {
                              reasonForVisit.refill == true ||
                              reasonForVisit.injury == true ||
                              reasonForVisit.typedReasonForVisit != ""){
-                            message = "Your appointment has been scheduled!"
+                            message = reasonForVisit.alertMessage()
                         }
                         else if reasonForVisit.submitButton &&
                             (reasonForVisit.generalCheckup == false ||
@@ -104,7 +115,7 @@ struct ScheduleView : View {
                              reasonForVisit.refill == false ||
                              reasonForVisit.injury == false ||
                              reasonForVisit.typedReasonForVisit == ""){
-                            message = "Please select or fill out your reason for visit"
+                            message = reasonForVisit.alertMessage()
                         }
                         else{}
                     }) {
@@ -122,8 +133,9 @@ struct ScheduleView : View {
                               .modifier(ButtonText())
                         }
                     }.alert("\(message)", isPresented: $submitButtonClicked) {
-                        Button("Home page") {}
-                        Button("Schedule Appointment"){}
+                        NavigationLink(destination: ScheduleView()){
+                            Button("Done"){}
+                        }
                     }
                     NavigationLink(destination: HelpPage()) {
                         Text("\nClick here to learn about how the app works!").font(.custom("Times New Roman", size: 12))
@@ -136,3 +148,14 @@ struct ScheduleView : View {
         }
     }
 }
+ 
+extension Formatter {
+    static let time: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = .init(identifier: "em_US_POSIX")
+        formatter.dateFormat = "HH:mm"
+        return formatter
+    }()
+}
+ 
+func addSubview(_ view: UIView){}

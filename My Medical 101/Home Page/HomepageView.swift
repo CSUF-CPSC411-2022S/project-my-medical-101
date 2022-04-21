@@ -42,7 +42,10 @@ struct ContentViewHomepage: View {
                            }.padding(.top)
                     }
                 }
-            }.edgesIgnoringSafeArea(.top).navigationBarBackButtonHidden(true).navigationBarHidden(true)
+            }
+            .edgesIgnoringSafeArea(.top)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarHidden(true)
         }
     }
 }
