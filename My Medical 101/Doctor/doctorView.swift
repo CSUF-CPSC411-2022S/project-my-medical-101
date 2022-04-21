@@ -12,7 +12,7 @@ import AssetsLibrary
 // TODO: Continue working on View
 struct DocView : View {
     @EnvironmentObject var appointment: ScheduleAppt
-    @EnvironmentObject var patientInformation: myDocHomePage
+    @EnvironmentObject var patient: Patient
     
     var body: some View {
         NavigationView {
@@ -21,14 +21,15 @@ struct DocView : View {
                     Text("Patients").bold()
                         .modifier(patientsTitle()).padding(.bottom)
                     VStack{
-                        Text("Patient Name: Patient 1 ")
-                        Text("DOB")
-                        // TODO: need to store date and time separately 
-                        Text("\(appointment.date) ")
-                        Text("\(appointment.time)")
+                        HStack{
+                            Text("Patient Name: ")
+                            Text("\(patient.myName)")
+                        }
+                        Text("Date: \(appointment.strDate) ")
+                        Text("Time (24 hour time): \(appointment.strTime)")
                         HStack{
                             Text("Reason for Visit: ")
-                            // work on using variables from the class
+//                            Text("\(appointment.storedReasonForVisit)")
                         }
                         
                     }.modifier(field())

@@ -9,8 +9,8 @@ import AssetsLibrary
 
 struct ScheduleView : View {
     @EnvironmentObject var reasonForVisit: ScheduleAppt
-        @State var submitButtonClicked = false
-        @State var message: String = ""
+    @State var submitButtonClicked = false
+    @State var message: String = ""
     @State var timeInterval: [TimeInterval] = [2.0,12.0]
         
         let dateRange: ClosedRange<Date> = {
@@ -133,8 +133,9 @@ struct ScheduleView : View {
                               .modifier(ButtonText())
                         }
                     }.alert("\(message)", isPresented: $submitButtonClicked) {
-                        Button("Home page") {}
-                        Button("Schedule Appointment"){}
+                        NavigationLink(destination: ScheduleView()){
+                            Button("Done"){}
+                        }
                     }
                     NavigationLink(destination: HelpPage()) {
                         Text("\nClick here to learn about how the app works!").font(.custom("Times New Roman", size: 12))

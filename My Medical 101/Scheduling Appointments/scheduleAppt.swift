@@ -16,6 +16,8 @@ class ScheduleAppt: ObservableObject {
     @Published var submitButton: Bool = false
     @Published var date = Date()
     @Published var time = Date()
+    @Published var strDate: String = ""
+    @Published var strTime: String = ""
     @Published var messageDisplayed: String = ""
     
     init(){
@@ -38,6 +40,16 @@ class ScheduleAppt: ObservableObject {
              injury == true ||
              typedReasonForVisit != ""){
             messageDisplayed = "Your appointment has been scheduled!"
+            
+            let calendar = Calendar.current
+            let hour = calendar.component(.hour, from: time)
+            let minute = calendar.component(.minute, from: time)
+            strTime = String(hour) + ":" + String(minute)
+            
+            let day = calendar.component(.day, from: date)
+            let month = calendar.component(.month, from: date)
+            let year = calendar.component(.year, from: date)
+            strDate = String(month) + "/" + String(day) + "/" + String(year)
         }
         else if submitButton &&
             (generalCheckup == false ||
