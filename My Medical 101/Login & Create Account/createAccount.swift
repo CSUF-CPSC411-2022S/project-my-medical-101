@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Patient: ObservableObject {
+class Patient: ObservableObject, Identifiable {
     @Published var firstName: String
     @Published var lastName: String
     @Published var dob: String

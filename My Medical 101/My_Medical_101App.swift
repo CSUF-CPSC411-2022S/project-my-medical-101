@@ -9,12 +9,17 @@ import SwiftUI
 
 @main
 struct My_Medical_101App: App {
-    @StateObject var patient = Patient()  
+    @StateObject var patient = Patient()
+    @StateObject var doctor = Doctor()
     @StateObject var scheduleAppt = ScheduleAppt()
     @StateObject var medication = Medication()
     var body: some Scene {
         WindowGroup {
-            ContentViewLogin().environmentObject(patient).environmentObject(scheduleAppt).environmentObject(medication)
+            ContentViewLogin()
+                .environmentObject(patient)
+                .environmentObject(doctor)
+                .environmentObject(scheduleAppt)
+                .environmentObject(medication)
         }
     }
 }

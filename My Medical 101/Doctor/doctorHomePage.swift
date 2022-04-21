@@ -13,8 +13,22 @@ struct myDocHomePage {
 
 class Doctor: ObservableObject {
     @Published var patients: [Patient] = []
+    @Published var name: String
     
-    init() {
+    var patientsList: String {
+        var list: String = ""
+        if !patients.isEmpty {
+            for patient in patients {
+                list += patient.firstName + " " + patient.lastName
+            }
+        } else {
+            list = "No Patients"
+        }
         
+        return list
+    }
+        
+    init() {
+        self.name = "Dr. P"
     }
 }

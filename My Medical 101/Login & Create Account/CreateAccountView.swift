@@ -145,6 +145,17 @@ struct ContentViewNewAccount: View {
                                }.padding(.top)
                         }.disabled(email.isEmpty || password.isEmpty || phoneNumber.isEmpty)
                             .padding()
+                        Section {
+                            Button(action: {
+
+                            }) {
+                                NavigationLink(destination: docContentView()) {
+                                    Text("Doctor Account")
+                                        .modifier(CreateButtonText())
+                                   }.navigationBarBackButtonHidden(true)
+                               }.padding(.top)
+                        }.disabled(email.isEmpty || password.isEmpty || phoneNumber.isEmpty)
+                            .padding()
                     }
                 }
                 .frame(width: 325, height: .infinity)
