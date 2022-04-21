@@ -12,60 +12,26 @@ import AssetsLibrary
 // TODO: Continue working on View
 struct DocView : View {
     @EnvironmentObject var appointment: ScheduleAppt
+    @EnvironmentObject var patient: Patient
     var body: some View {
         ScrollView {
-            VStack {
-                Text("Appointments").modifier(Headers()).padding(.bottom)
+            VStack{
+                Text("Patients").bold()
+                    .modifier(Headers()).padding(.bottom)
                 VStack{
-                    Text("Patient Name: Patient 1 ")
-                    Text("DOB")
-                    Text("\(appointment.date)")
+                    HStack{
+                        Text("Patient Name: ")
+                        Text("\(patient.firstName) \(patient.lastName)")
+                    }
+                    Text("Date: \(appointment.strDate) ")
+                    Text("Time (24 hour time): \(appointment.strTime)")
                     HStack{
                         Text("Reason for Visit: ")
-                        if appointment.submitButton == true {
-                            if appointment.generalCheckup == true{
-                                Text("General Checkup")
-                            }
-                            else if appointment.followUp == true{
-                                Text("Follow up")
-                            }
-                            else if appointment.refill == true{
-                                Text("Refill")
-                            }
-                            else if appointment.injury == true{
-                                Text("Injury")
-                            }
-                            else if appointment.typedReasonForVisit != ""{
-                                Text("\(appointment.typedReasonForVisit)")
-                            }
-                            else{
-                                Text("Purpose of visit not listed")
-                            }
-                        }
+                        Text("\(appointment.purposeOfVisit)")
                     }
                     
                 }.modifier(field())
             }
-        }.edgesIgnoringSafeArea(.top).navigationBarBackButtonHidden(true).navigationBarHidden(true)
-    }
-}
-
-struct patientsTitle: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .font(.custom("Times New Roman", size:30))
-            .foregroundColor(Color.black)
-            .frame(maxWidth: .infinity, maxHeight: 100)
-            .background(Color("pastelBlue"))
-    }
-}
-
-struct field: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .font(.custom("Times New Roman", size: 12))
-            .frame(width: 360)
-            .background(Color("pastelPurple"))
-            .cornerRadius(25)
+        }.edgesIgnoringSafeArea(.top)
     }
 }
