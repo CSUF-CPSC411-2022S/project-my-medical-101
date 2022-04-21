@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+// TITLE HEADERS
+struct Headers: ViewModifier {
+    func body(content: Content) -> some View {
+         content
+            .font(.custom("Times New Roman", size: 55))
+            .foregroundColor(Color.black)
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+            .frame(width: 500, height: 200)
+            .background(Color("pastelBlue"))
+    }
+ }
+
 // LOGIN MODIFIERS
 struct LogoText: ViewModifier {
     func body(content: Content) -> some View {
@@ -54,7 +66,7 @@ struct TopText: ViewModifier {
 struct CreateButtonText: ViewModifier {
      func body(content: Content) -> some View {
          content
-             .frame(width: 200, height: 30)
+            .frame(width: 200, height: 30)
             .font(.custom("Times New Roman", size: 22))
             .foregroundColor(Color.black)
             .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
@@ -63,14 +75,13 @@ struct CreateButtonText: ViewModifier {
     }
 }
 
-struct textTypingBox: ViewModifier {
+struct CATextField: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .padding()
+            .frame(width: 280, height: 50, alignment: .leading)
             .background(Color.gray.opacity(0.1))
             .cornerRadius(40)
-            .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 20))
-            .frame(width: 200, height: 50)
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
    }
 }
 
@@ -99,8 +110,81 @@ struct HPButtonText: ViewModifier {
    }
 }
 
-// APPOINTMENT MODIFERS
+struct Temp: ViewModifier {
+   func body(content: Content) -> some View {
+        content
+           .frame(width:315, height: 50)
+           .font(.custom("Times New Roman", size: 22))
+           .foregroundColor(Color.black)
+           .padding(EdgeInsets(top:20, leading: 20, bottom: 10, trailing: 20))
+           .background(Color("pastelBlue"))
+           .cornerRadius(10)
+           .multilineTextAlignment(.center)
+   }
+}
 
+// APPOINTMENT MODIFERS
+struct scheduleAppttitle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("Times New Roman", size:30))
+            .foregroundColor(Color.black)
+            .frame(maxWidth: .infinity, maxHeight: 100)
+            .background(Color("pastelBlue"))
+    }
+}
+
+struct explanation: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("Times New Roman", size: 12))
+            .frame(width: 360, height: 50)
+            .background(Color("lightPastelBlue"))
+            .cornerRadius(20)
+    }
+}
+
+struct dateField: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("Times New Roman", size: 12))
+            .frame(width: 360)
+            .background(Color("pastelPurple"))
+            .cornerRadius(25)
+    }
+}
+
+struct reasonForVisitField: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("Times New Roman", size: 12))
+            .frame(width: 360, height: 280)
+            .background(Color("pastelPurple"))
+            .cornerRadius(25)
+    }
+}
+
+struct ButtonText: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+           .font(.custom("Times New Roman", size: 12))
+           .foregroundColor(Color.black)
+           .padding()
+           .background(Color("darkPastelPurple"))
+           .cornerRadius(10)
+   }
+}
+
+struct ButtonClicked: ViewModifier{
+    func body(content: Content) -> some View {
+        content
+            .font(.custom("Times New Roman", size: 12))
+            .foregroundColor(Color.black)
+            .padding()
+            .background(Color("pastelBlue"))
+            .cornerRadius(10)
+    }
+}
 
 // MY CHART MODIFIERS
 struct chartTitle: ViewModifier {

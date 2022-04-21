@@ -12,37 +12,30 @@ import SwiftUI
 struct ContentViewHomepage: View {
     @EnvironmentObject var patient: Patient
     var body: some View {
-        VStack {
-            Text("My Medical 101").modifier(TitleText())
-            Spacer()
-            Image("headerIcon")
-                .resizable()
-                .frame(width: .infinity, height: 200)
-                .padding(EdgeInsets(top: -60, leading: 20, bottom: 0, trailing: 20))
-            HStack {
-                Spacer()
+        ScrollView {
+            VStack {
+                Text("My Medical 101").modifier(Headers())
+                Image("headerIcon")
+                    .resizable()
+                    .frame(width: 400, height: 200)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                 Text("Welcome \(patient.firstName)!")
                     .font(.custom("Times New Roman", size: 25))
                     .bold()
+                Text("Upcoming Appointments").modifier(Temp())
+                Text("Old Appointments").modifier(Temp())
+                Text("My History ").modifier(Temp())
+                Text("My Chart").modifier(Temp())
+                Text("IDK").modifier(Temp())
+                Text("hehe").modifier(Temp())
                 Spacer()
             }
-            
-            HStack {
-                Button(action: {
-                  print("Viewing Upcoming Appointments")
-                }) {
-                  Text("Upcoming Appointments")
-                        .frame(width:315, height: 50)
-                        .font(.custom("Times New Roman", size: 22))
-                        .foregroundColor(Color.black)
-                        .padding(EdgeInsets(top:20, leading: 20, bottom: 10, trailing: 20))
-                        .background(Color("pastelBlue"))
-                        .cornerRadius(10)
-                        .multilineTextAlignment(.center)
-                }
-            }.padding(EdgeInsets(top: 0, leading: 30, bottom: 20, trailing: 20))
-            Spacer()
-        }
+        }.edgesIgnoringSafeArea(.top).navigationBarBackButtonHidden(true).navigationBarHidden(true)
+    }
+}
 
+struct contentHP_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentViewHomepage()
     }
 }

@@ -48,5 +48,12 @@ class My_Medical_101Tests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func textTabViews() throws {
+        let tabBarsQuery = XCUIApplication().tabBars
+        tabBarsQuery.buttons["Home"].tap()
+        let welcome = tabBarsQuery.staticTexts["Welcome"]
+        XCTAssert(welcome.exists)
+    }
 
 }

@@ -14,12 +14,12 @@ struct ChartView: View {
     @State var changeProfileImage = false
     @State var openCameraRoll = false
     @State var imageSelected = UIImage()
-
+    
     var body: some View {
         NavigationView {
-            GeometryReader { geometry in
+            ScrollView {
                 VStack {
-                    Section (header: Text("My Chart").modifier(chartTitle())) { }
+                    Text("My Chart").modifier(Headers())
                     Group {
                         HStack {
                             ZStack(alignment: .bottomTrailing) {
@@ -36,7 +36,7 @@ struct ChartView: View {
                                         Image("imagePlaceholder")
                                             .resizable()
                                             .clipShape(Circle())
-                                            .frame(width: 120, height: 120)    
+                                            .frame(width: 120, height: 120)
                                     }
                                 })
                                 Image(systemName: "plus")
@@ -126,11 +126,9 @@ struct ChartView: View {
                                 .cornerRadius(25)
                                 .foregroundColor(Color.black)
                         }
-                        
                     }
-                    Spacer()
-                }.frame(height: geometry.size.height/1.5)
-            }
+                }
+            }.edgesIgnoringSafeArea(.top)
         }
     }
 }
