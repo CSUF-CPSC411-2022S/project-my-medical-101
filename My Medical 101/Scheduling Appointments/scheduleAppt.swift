@@ -19,8 +19,9 @@ class ScheduleAppt: ObservableObject {
     @Published var strDate: String = ""
     @Published var strTime: String = ""
     @Published var messageDisplayed: String = ""
+    @Published var purposeOfVisit: String = ""
     
-    init(){
+    init() {
         self.generalCheckup = false
         self.followUp = false
         self.refill = false
@@ -30,6 +31,7 @@ class ScheduleAppt: ObservableObject {
         self.date = Date()
         self.time = Date()
         self.messageDisplayed = ""
+        purposeOfVisit = ""
     }
     
     func alertMessage() -> String {
@@ -41,10 +43,28 @@ class ScheduleAppt: ObservableObject {
              typedReasonForVisit != ""){
             messageDisplayed = "Your appointment has been scheduled!"
             
+            if(generalCheckup == true){
+                purposeOfVisit = "General Checkup"
+            }
+            else if(followUp == true){
+                purposeOfVisit = "Follow up"
+            }
+            else if(refill == true){
+                purposeOfVisit = "Refill"
+            }
+            else if(injury == true){
+                purposeOfVisit = "Injury"
+            }
+            else if(typedReasonForVisit != ""){
+                purposeOfVisit = typedReasonForVisit
+            }
+            else{}
+            // to store date and time separately
             let calendar = Calendar.current
             let hour = calendar.component(.hour, from: time)
             let minute = calendar.component(.minute, from: time)
             strTime = String(hour) + ":" + String(minute)
+            // TODO: add am and pm
             
             let day = calendar.component(.day, from: date)
             let month = calendar.component(.month, from: date)

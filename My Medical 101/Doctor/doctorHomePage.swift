@@ -6,11 +6,10 @@
 //
 
 import Foundation
-import SwiftUI
 
 class myDocHomePage: ObservableObject {
     
     init(){
-        
+
     }
 }

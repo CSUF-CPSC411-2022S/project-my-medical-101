@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import AssetsLibrary
 
-// TODO: Continue working on View
+// TODO: every patient should be stored in an array and should be displayed
 struct DocView : View {
     @EnvironmentObject var appointment: ScheduleAppt
     @EnvironmentObject var patient: Patient
@@ -29,7 +29,7 @@ struct DocView : View {
                         Text("Time (24 hour time): \(appointment.strTime)")
                         HStack{
                             Text("Reason for Visit: ")
-//                            Text("\(appointment.storedReasonForVisit)")
+                            Text("\(appointment.purposeOfVisit)")
                         }
                         
                     }.modifier(field())
@@ -53,7 +53,7 @@ struct patientsTitle: ViewModifier {
 struct field: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.custom("Times New Roman", size: 12))
+            .font(.custom("Times New Roman", size: 16))
             .frame(width: 360)
             .background(Color("pastelPurple"))
             .cornerRadius(25)
