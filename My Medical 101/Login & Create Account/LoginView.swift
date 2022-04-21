@@ -86,6 +86,7 @@ struct ContentViewLogin: View {
                  }
              }
          }
+         .edgesIgnoringSafeArea(.top)
          .navigationBarBackButtonHidden(true)
          .navigationBarHidden(true)
      }

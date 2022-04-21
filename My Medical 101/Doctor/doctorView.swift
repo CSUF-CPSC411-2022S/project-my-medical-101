@@ -13,10 +13,9 @@ import AssetsLibrary
 struct DocView : View {
     @EnvironmentObject var appointment: ScheduleAppt
     var body: some View {
-        GeometryReader { geometry in
-            VStack{
-                Text("Patients").bold()
-                    .modifier(patientsTitle()).padding(.bottom)
+        ScrollView {
+            VStack {
+                Text("Appointments").modifier(Headers()).padding(.bottom)
                 VStack{
                     Text("Patient Name: Patient 1 ")
                     Text("DOB")
@@ -47,7 +46,7 @@ struct DocView : View {
                     
                 }.modifier(field())
             }
-        }
+        }.edgesIgnoringSafeArea(.top).navigationBarBackButtonHidden(true).navigationBarHidden(true)
     }
 }
 

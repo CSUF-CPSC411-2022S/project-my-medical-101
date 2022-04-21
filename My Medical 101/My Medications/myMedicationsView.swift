@@ -12,16 +12,9 @@ struct MedicationsView: View {
     @EnvironmentObject var patient: Patient
     @EnvironmentObject var medication: Medication
     var body: some View {
-        VStack {
+        ScrollView {
             VStack {
-                Text("My Medications")
-                    .font(.custom("Marker Felt", size:50))
-                    .foregroundColor(Color.black)
-                    .padding(EdgeInsets(top: 100, leading: 20, bottom: 50, trailing: 20))
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color("pastelBlue"))
-            }
-            VStack {
+                Text("My Medications").modifier(Headers())
                 Text("List of Medications")
                 Spacer()
                 VStack {
@@ -41,6 +34,6 @@ struct MedicationsView: View {
                     }
                 }
             }
-        }
+        }.edgesIgnoringSafeArea(.top)
     }
 }
