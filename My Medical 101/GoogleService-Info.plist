@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>49150050228-5r3n05h4e2r1k503l8h9bm4voqfqjqlm.apps.googleusercontent.com</string>
+	<string>335516235072-360objtp22blq8u7dc6k9losoqc1eblo.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.49150050228-5r3n05h4e2r1k503l8h9bm4voqfqjqlm</string>
+	<string>com.googleusercontent.apps.335516235072-360objtp22blq8u7dc6k9losoqc1eblo</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCIh6wdfiUSmEOvX8H6OIMbczBnzMPWp9w</string>
+	<string>AIzaSyBpNqdyDe_Q0eQydRehxR0OoB_GPl1YQRU</string>
 	<key>GCM_SENDER_ID</key>
-	<string>49150050228</string>
+	<string>335516235072</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>edu.fullerton.ecs.My-Medical-101</string>
 	<key>PROJECT_ID</key>
-	<string>my-medical-101</string>
+	<string>mymedicalapp-5f42b</string>
 	<key>STORAGE_BUCKET</key>
-	<string>my-medical-101.appspot.com</string>
+	<string>mymedicalapp-5f42b.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:49150050228:ios:2ad49e1af958e74fce7ce1</string>
+	<string>1:335516235072:ios:7e67bfe03da19dd9ed76a5</string>
 </dict>
 </plist>

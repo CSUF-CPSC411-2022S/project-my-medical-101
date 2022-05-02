@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentViewLogin: View {
     @State var email: String = ""
     @State var password: String = ""
+    @EnvironmentObject var database: FirestoreDatabase
 
      var body: some View {
          NavigationView {
@@ -55,14 +56,16 @@ struct ContentViewLogin: View {
                              
                              Section {
                                  Button(action: {
-                                     
+                                     // work in progress
+                                     database.validateLogin(email:$email.wrappedValue, password:$password.wrappedValue)
                                  }) {
-                                     //NAVIGATION LINK
-                                     NavigationLink(destination: ContentView()) {
-                                   Text("Login")
-                                     .modifier(LoginButtonText())
-                                     }.navigationBarBackButtonHidden(true)
+                                     Text("Login")
                                  }.padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
+                                 //NAVIGATION LINK
+                                 NavigationLink(destination: ContentView()) {
+                               Text("Go to Home Page")
+                                 .modifier(LoginButtonText())
+                                 }.navigationBarBackButtonHidden(true)
                              }.disabled(email.isEmpty || password.isEmpty)
                              
                          }
