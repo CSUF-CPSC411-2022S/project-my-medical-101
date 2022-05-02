@@ -35,8 +35,6 @@
 		7AB512A3281E0A8F004378D5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7AB512A2281E0A8F004378D5 /* FirebaseStorage */; };
 		7AB512A5281E0A8F004378D5 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 7AB512A4281E0A8F004378D5 /* FirebaseStorageCombine-Community */; };
 		7AB512A7281E0A8F004378D5 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 7AB512A6281E0A8F004378D5 /* FirebaseStorageSwift-Beta */; };
-		7AB512AA281E56AC004378D5 /* Patients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB512A9281E56AC004378D5 /* Patients.swift */; };
-		7AB512AD281E5A0C004378D5 /* patientApptDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB512AC281E5A0C004378D5 /* patientApptDB.swift */; };
 		7AB512AF281E60EA004378D5 /* FirestoreDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB512AE281E60EA004378D5 /* FirestoreDatabase.swift */; };
 		7AE2BC9F27C4C2C800102805 /* loginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE2BC9E27C4C2C800102805 /* loginPage.swift */; };
 		7AE2BCA127C4C2D900102805 /* homePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE2BCA027C4C2D900102805 /* homePage.swift */; };
@@ -89,8 +87,6 @@
 /* Begin PBXFileReference section */
 		7A43C0FE27E97651004F3434 /* doctorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doctorView.swift; sourceTree = "<group>"; };
 		7AB51271281E097B004378D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		7AB512A9281E56AC004378D5 /* Patients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patients.swift; sourceTree = "<group>"; };
-		7AB512AC281E5A0C004378D5 /* patientApptDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = patientApptDB.swift; sourceTree = "<group>"; };
 		7AB512AE281E60EA004378D5 /* FirestoreDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDatabase.swift; sourceTree = "<group>"; };
 		7AE2BC9E27C4C2C800102805 /* loginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginPage.swift; sourceTree = "<group>"; };
 		7AE2BCA027C4C2D900102805 /* homePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homePage.swift; sourceTree = "<group>"; };
@@ -177,18 +173,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7AB512A8281E563C004378D5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7AB512A9281E56AC004378D5 /* Patients.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		7AB512AB281E59E9004378D5 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				7AB512AC281E5A0C004378D5 /* patientApptDB.swift */,
 				7AB512AE281E60EA004378D5 /* FirestoreDatabase.swift */,
 			);
 			path = Database;
@@ -261,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				7AB512AB281E59E9004378D5 /* Database */,
-				7AB512A8281E563C004378D5 /* Model */,
 				7AB51271281E097B004378D5 /* GoogleService-Info.plist */,
 				9C2DDDD927C4BC6200390458 /* My_Medical_101App.swift */,
 				9C2D5407280F117100CB383B /* ContentView.swift */,
@@ -513,10 +499,8 @@
 				9C52248227E13F9F0006402D /* imagePicker.swift in Sources */,
 				9C2DDDDC27C4BC6200390458 /* LoginView.swift in Sources */,
 				9CC6D89227F58B2C00C09CA8 /* patient.swift in Sources */,
-				7AB512AA281E56AC004378D5 /* Patients.swift in Sources */,
 				9C2DDDDA27C4BC6200390458 /* My_Medical_101App.swift in Sources */,
 				9C2DDE0627C4C2CF00390458 /* myChart.swift in Sources */,
-				7AB512AD281E5A0C004378D5 /* patientApptDB.swift in Sources */,
 				7AE3B47927E14DA7002CA78C /* HomepageView.swift in Sources */,
 				9C2DDDDC27C4BC6200390458 /* LoginView.swift in Sources */,
 				9C5A441427E1B62D00C16103 /* doctorHomePage.swift in Sources */,
