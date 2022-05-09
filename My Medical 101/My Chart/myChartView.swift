@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ChartView: View {
     @EnvironmentObject var patient: Patient
+    @EnvironmentObject var database: FirestoreDatabase
+    
     @State var buttonClicked = false
     @State var changeProfileImage = false
     @State var openCameraRoll = false
@@ -50,16 +52,16 @@ struct ChartView: View {
                             HStack {
                                 VStack {
                                     HStack {
-                                        TextField("First Name", text: $patient.firstName)
+                                        TextField("First Name", text: $database.logInFirstName)
                                             .padding(EdgeInsets(top: 30, leading: 0, bottom: 10, trailing: 0))
                                             .font(.custom("Times New Roman", size: 30))
-                                        TextField("Last Name", text: $patient.lastName)
+                                        TextField("Last Name", text: $database.logInLastName)
                                             .padding(EdgeInsets(top: 30, leading: -30, bottom: 10, trailing: 10))
                                             .font(.custom("Times New Roman", size: 30))
                                     }
                                     Spacer()
                                     HStack {
-                                        Text("DOB: \(patient.dob)")
+                                        Text("DOB: \(database.logInDOB)")
                                             .padding(EdgeInsets(top: 5, leading: -70, bottom: 10, trailing: 10))
                                             .font(.custom("Times New Roman", size: 15))
                                     }
@@ -76,21 +78,21 @@ struct ChartView: View {
                             HStack {
                                 Text("Gender: ")
                                     .padding(20)
-                                TextField("Gender", text: $patient.gender)
+                                TextField("Gender", text: $database.logInGender)
                                     .padding(EdgeInsets(top: 2, leading: 30, bottom: 5, trailing: 2))
                             }.modifier(chartInfo()).padding(.bottom)
                             Spacer()
                             HStack {
                                 Text("Height: ")
                                     .padding(20)
-                                TextField("Height", text: $patient.height)
+                                TextField("Height", text: $database.logInHeight)
                                     .padding(EdgeInsets(top: 2, leading: 30, bottom: 5, trailing: 2))
                             }.modifier(chartInfo()).padding(.bottom)
                             Spacer()
                             HStack {
                                 Text("Weight: ")
                                     .padding(20)
-                                TextField("Weight", text: $patient.weight)
+                                TextField("Weight", text: $database.logInWeight)
                                     .padding(EdgeInsets(top: 2, leading: 20, bottom: 5, trailing: 2))
                             }.modifier(chartInfo()).padding(.bottom)
                         }

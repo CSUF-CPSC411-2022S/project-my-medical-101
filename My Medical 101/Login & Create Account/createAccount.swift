@@ -20,6 +20,7 @@ class Patient: ObservableObject, Identifiable {
     @Published var strDate: String
     @Published var strTime: String
     @Published var purposeOfVisit: String
+    @Published var validLogin: Bool
 
 
     @Published var meds: [Medication]
@@ -51,6 +52,6 @@ class Patient: ObservableObject, Identifiable {
         self.strDate = ""
         self.strTime = ""
         self.purposeOfVisit = ""
+        self.validLogin = false
     }
-    
 }

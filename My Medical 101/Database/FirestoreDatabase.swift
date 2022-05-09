@@ -10,17 +10,33 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import simd
 import Foundation
+import FirebaseMLModelDownloader
 
 class FirestoreDatabase: ObservableObject {
     private let firebaseDb = Firestore.firestore()
-//    static let shared : FirestoreDatabase = FirestoreDatabase()
-//    private let patientsCollection = "patients"
     
-    @Published var patient = Patient()
-
-
+    @Published var validLogin: Bool
+    @Published var logInFirstName: String
+    @Published var logInLastName: String
+    @Published var logInDOB: String
+    @Published var logInGender: String
+    @Published var logInHeight: String
+    @Published var logInWeight: String
+    @Published var logInDate: String
+    @Published var logInTime: String
+    @Published var logInPurposeOfVisit: String
+    
     init(){
-        self.patient = Patient()
+        self.validLogin = false
+        self.logInFirstName = ""
+        self.logInLastName = ""
+        self.logInDOB = ""
+        self.logInGender = ""
+        self.logInHeight = ""
+        self.logInWeight = ""
+        self.logInDate = ""
+        self.logInTime = ""
+        self.logInPurposeOfVisit = ""
     }
     
     func add(p: Patient) -> Bool {
@@ -43,62 +59,48 @@ class FirestoreDatabase: ObservableObject {
         print("in add")
         return true
     }
-  
-    //work in progress: trying to pull data using email
-    func validateLogin(email:String, password:String) {
-        let docRef = firebaseDb.document("patientCollection/Jane@gmail.com")
-        //let docRef = firebaseDb.document("patientCollection/\(email)")
-        docRef.getDocument{ snapshot, error in
-            guard let data = snapshot?.data(), error == nil else{
-                return
-            }
-            guard let strPassword = data["Password"] as? String else{
-                return
-            }
-            if (password == strPassword){
-                print("login successful")
-            }
-
-            //print("firstName in get function: \(firstName)")
-        }
-    }
-}
-
-
-//    func update(usingPatientsItem patientItem: PatientItem) {
-//
-//        firebaseDb
-//            .collection(patientsCollection)
-//            .whereField("email", isEqualTo: patientItem.email)
-//            .getDocuments{(snapshot, error) in
-//                if let error = error {
-//                    print("Document error: \(error)")
-//                } else{
-//                    if let document = snapshot?.documents.first{
-//                        do {
-//                            try document.reference.setData(from: patientItem)
-//                        } catch let error {
-//                            print("Document error: \(error)")
-//                        }
-//                    }
-//                }
-//            }
-//    }
-//
-//    func delete(usingId email: String) {
-//        firebaseDb
-//            .collection(patientsCollection)
-//            .whereField("email", isEqualTo: email)
-//            .getDocuments{(snapshot, error) in
-//                if let error = error {
-//                    print("Document error: \(error)")
-//                } else{
-//                    if let document = snapshot?.documents.first{
-//                        document.reference.delete {(error) in
-//                            print("Delete failed: \(String(describing: error))")
-//                        }
-//                    }
-//                }
-//            }
-//    }
     
+    func getData(user:String, password:String) -> (Bool) {
+        
+        let group = DispatchGroup()
+        group.enter()
+        
+        let docRef = firebaseDb.document("patientCollection/\(user)")
+
+        docRef.getDocument {[weak self] snapshot, error in
+            guard let data = snapshot?.data(), error == nil
+            else {
+                return
+            }
+
+            guard let text = data["password"] as? String
+            else{
+                return
+            }
+            
+            DispatchQueue.main.async {
+                print("printing text from getData: " + text)
+                if (password == text) {
+                    print("Password matches. Login Successful.")
+                    
+                    self?.logInFirstName = data["firstName"] as! String
+                    self?.logInLastName = data["lastName"] as! String
+                    self?.logInDOB = data["dob"] as! String
+                    self?.logInWeight =  data["weight"] as! String
+                    self?.logInHeight =  data["height"] as! String
+                    self?.logInGender =  data["gender"] as! String
+                    self?.logInDate =  data["apptDate"] as! String
+                    self?.logInTime =  data["apptTime"] as! String
+                    self?.logInPurposeOfVisit =  data["purposeOfVisit"] as! String
+                    self?.validLogin = true
+                }
+                else{
+                    print("Login not successful")
+                    self?.validLogin = false
+                }
+                group.leave()
+            }
+    }
+    return self.validLogin
+}
+}

@@ -8,8 +8,12 @@ import SwiftUI
 
 // LOG IN PAGE CODE
 struct ContentViewLogin: View {
+    @EnvironmentObject var patient: Patient
+    
     @State var email: String = ""
     @State var password: String = ""
+    @State var validLogin: Bool = false
+    
     @EnvironmentObject var database: FirestoreDatabase
 
      var body: some View {
@@ -56,16 +60,19 @@ struct ContentViewLogin: View {
                              
                              Section {
                                  Button(action: {
-                                     // work in progress
-                                     database.validateLogin(email:$email.wrappedValue, password:$password.wrappedValue)
+                                     validLogin = database.getData(user:$email.wrappedValue, password:$password.wrappedValue)
                                  }) {
                                      Text("Login")
+                                     
                                  }.padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
                                  //NAVIGATION LINK
-                                 NavigationLink(destination: ContentView()) {
-                               Text("Go to Home Page")
-                                 .modifier(LoginButtonText())
-                                 }.navigationBarBackButtonHidden(true)
+                                 if (database.validLogin) {
+                                     NavigationLink(destination: ContentView()) {
+                                   Text("Go to Home Page")
+                                     .modifier(LoginButtonText())
+                                     }.navigationBarBackButtonHidden(true)
+                                 }
+                                 
                              }.disabled(email.isEmpty || password.isEmpty)
                              
                          }

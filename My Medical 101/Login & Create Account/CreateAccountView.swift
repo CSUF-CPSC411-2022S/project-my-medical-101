@@ -141,15 +141,12 @@ struct ContentViewNewAccount: View {
                         Section {
                             Button(action: {
                                 flag = database.add(p: patient)
-                                // tracing
-                                //print("email: " + patient.email)
-                                print("Account created")
                             }) {
                                 Text("Create my Account")
                                }.padding(.top)
                             
-                            NavigationLink(destination: ContentView()) {
-                                Text("Go to Home page")
+                            NavigationLink(destination: ContentViewLogin()) {
+                                Text("Go to Login")
                                     .modifier(CreateButtonText())
                                }.navigationBarBackButtonHidden(true)
                             
