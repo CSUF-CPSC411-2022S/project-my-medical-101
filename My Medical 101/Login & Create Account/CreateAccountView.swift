@@ -11,10 +11,14 @@ import SwiftUI
 
 struct ContentViewNewAccount: View {
     @EnvironmentObject var patient: Patient
+    @EnvironmentObject var database: FirestoreDatabase
+    
     @State var email: String = ""
     @State var password: String = ""
     @State var phoneNumber: String = ""
     @State private var selected = 1
+    @State var flag: Bool = false
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -100,7 +104,7 @@ struct ContentViewNewAccount: View {
                                 .frame(maxWidth: 300, alignment: .leading)
                                 .padding(.leading, 20)
                                 .font(.custom("Times New Roman", size: 16))
-                            TextField("Email", text: $email)
+                            TextField("Email", text: $patient.email)
                                 .modifier(CATextField())
                             Spacer()
                         }
@@ -110,7 +114,7 @@ struct ContentViewNewAccount: View {
                                 .frame(maxWidth: 300, alignment: .leading)
                                 .padding(.leading, 20)
                                 .font(.custom("Times New Roman", size: 16))
-                            TextField("Password", text: $password)
+                            TextField("Password", text: $patient.password)
                                 .modifier(CATextField())
                             Spacer()
                         }
@@ -120,7 +124,7 @@ struct ContentViewNewAccount: View {
                                 .frame(maxWidth: 300, alignment: .leading)
                                 .padding(.leading, 20)
                                 .font(.custom("Times New Roman", size: 16))
-                            TextField("Phone Number", text: $phoneNumber)
+                            TextField("Phone Number", text: $patient.phoneNumber)
                                 .modifier(CATextField())
                                 .padding()
                         }
@@ -136,15 +140,17 @@ struct ContentViewNewAccount: View {
                             .border(Color("pastelBlue"))
                         Section {
                             Button(action: {
-
+                                flag = database.add(p: patient)
                             }) {
-                                NavigationLink(destination: ContentView()) {
-                                    Text("Create my Account")
-                                        .modifier(CreateButtonText())
-                                   }.navigationBarBackButtonHidden(true)
+                                Text("Create my Account")
                                }.padding(.top)
-                        }.disabled(email.isEmpty || password.isEmpty || phoneNumber.isEmpty)
-                            .padding()
+                            
+                            NavigationLink(destination: ContentViewLogin()) {
+                                Text("Go to Login")
+                                    .modifier(CreateButtonText())
+                               }.navigationBarBackButtonHidden(true)
+                            
+                        }.padding()
                         Section {
                             Button(action: {
 

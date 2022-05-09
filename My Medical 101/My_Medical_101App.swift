@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct My_Medical_101App: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     @StateObject var patient = Patient()
     @StateObject var doctor = Doctor()
     @StateObject var scheduleAppt = ScheduleAppt()
     @StateObject var medication = Medication()
+    @StateObject var firestoreDB = FirestoreDatabase()
     var body: some Scene {
         WindowGroup {
             ContentViewLogin()
@@ -20,7 +24,16 @@ struct My_Medical_101App: App {
                 .environmentObject(doctor)
                 .environmentObject(scheduleAppt)
                 .environmentObject(medication)
+                .environmentObject(firestoreDB)
         }
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate{
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        print("Finished Launching")
+        FirebaseApp.configure()
+        return true
     }
 }
 

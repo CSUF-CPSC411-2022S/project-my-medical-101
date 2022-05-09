@@ -9,9 +9,13 @@ import AssetsLibrary
  
 struct ScheduleView : View {
     @EnvironmentObject var reasonForVisit: ScheduleAppt
+    @EnvironmentObject var database: FirestoreDatabase
+    @EnvironmentObject var patient: Patient
+    
     @State var submitButtonClicked = false
     @State var message: String = ""
     @State var timeInterval: [TimeInterval] = [2.0,12.0]
+    @State var flag: Bool = false
         
         let dateRange: ClosedRange<Date> = {
             let calendar = Calendar.current
@@ -50,7 +54,7 @@ struct ScheduleView : View {
                         Text("Reason for Visit: ").font(.custom("Times New Roman", size: 20)).bold()
                             .frame(height: 45.0)
                         HStack{
-                            Button(action: {$reasonForVisit.generalCheckup.wrappedValue=true;$reasonForVisit.followUp.wrappedValue = false; $reasonForVisit.refill.wrappedValue = false; $reasonForVisit.injury.wrappedValue = false
+                            Button(action: {$reasonForVisit.generalCheckup.wrappedValue=true;$reasonForVisit.followUp.wrappedValue = false; $reasonForVisit.refill.wrappedValue = false; $reasonForVisit.injury.wrappedValue = false;
                             }) {
                                 if $reasonForVisit.generalCheckup.wrappedValue == true{
                                     Text("General Checkup")
@@ -118,6 +122,13 @@ struct ScheduleView : View {
                             message = reasonForVisit.alertMessage()
                         }
                         else{}
+                        
+                        // add to firebase
+                        patient.strDate = $reasonForVisit.strDate.wrappedValue
+                        patient.strTime = $reasonForVisit.strTime.wrappedValue
+                        patient.purposeOfVisit = $reasonForVisit.purposeOfVisit.wrappedValue
+                        
+                        flag = database.add(p: patient)
                     }) {
                         if reasonForVisit.submitButton &&
                             (reasonForVisit.generalCheckup == true ||

@@ -14,6 +14,15 @@ class Patient: ObservableObject, Identifiable {
     @Published var gender: String
     @Published var height: String
     @Published var weight: String
+    @Published var email: String
+    @Published var password: String
+    @Published var phoneNumber: String
+    @Published var strDate: String
+    @Published var strTime: String
+    @Published var purposeOfVisit: String
+    @Published var validLogin: Bool
+
+
     @Published var meds: [Medication]
     
     var medsList: String {
@@ -36,7 +45,13 @@ class Patient: ObservableObject, Identifiable {
         self.gender = ""
         self.height = ""
         self.weight = ""
+        self.email = ""
+        self.password = ""
+        self.phoneNumber = ""
         self.meds = []
+        self.strDate = ""
+        self.strTime = ""
+        self.purposeOfVisit = ""
+        self.validLogin = false
     }
-    
 }

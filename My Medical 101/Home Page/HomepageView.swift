@@ -11,6 +11,7 @@ import SwiftUI
 
 struct ContentViewHomepage: View {
     @EnvironmentObject var patient: Patient
+    @EnvironmentObject var database: FirestoreDatabase
     var body: some View {
         NavigationView {
             ScrollView {
@@ -20,18 +21,16 @@ struct ContentViewHomepage: View {
                         .resizable()
                         .frame(width: 400, height: 200)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                    Text("Welcome \(patient.firstName)!")
+                    Text("Welcome \(database.logInFirstName)!")
                         .font(.custom("Times New Roman", size: 25))
                         .bold()
-                    Text("Upcoming Appointments").modifier(Temp())
-                    Text("Old Appointments").modifier(Temp())
-                    Text("My History ").modifier(Temp())
-                    Text("My Chart").modifier(Temp())
-                    Text("IDK").modifier(Temp())
-                    Text("hehe").modifier(Temp())
+                    //Text("Upcoming Appointment").modifier(Temp())
+                    Text("Upcoming appointment: ")
+                    Text("\(database.logInDate)")
+                    Text("\(database.logInTime)")
+                    Text("\(database.logInPurposeOfVisit)")
                     Section {
                         Button(action: {
-
                         }) {
                             NavigationLink(destination: ContentViewLogin()) {
                                 Text("Log Out")
