@@ -15,7 +15,7 @@ struct My_Medical_101App: App {
     @StateObject var medication = Medication()
     var body: some Scene {
         WindowGroup {
-            ContentViewLogin()
+            FrontHomepageView()
                 .environmentObject(patient)
                 .environmentObject(doctor)
                 .environmentObject(scheduleAppt)

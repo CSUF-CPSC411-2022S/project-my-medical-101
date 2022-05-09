@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7A43C0FF27E97651004F3434 /* doctorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A43C0FE27E97651004F3434 /* doctorView.swift */; };
+		7A54E21C28232CF300553EF5 /* FrontHomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A54E21B28232CF300553EF5 /* FrontHomepageView.swift */; };
+		7A54E21E28232D2500553EF5 /* FrontHomepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A54E21D28232D2500553EF5 /* FrontHomepage.swift */; };
 		7AE2BC9F27C4C2C800102805 /* loginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE2BC9E27C4C2C800102805 /* loginPage.swift */; };
 		7AE2BCA127C4C2D900102805 /* homePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE2BCA027C4C2D900102805 /* homePage.swift */; };
 		7AE3B47727E14D90002CA78C /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE3B47627E14D90002CA78C /* CreateAccountView.swift */; };
@@ -59,6 +61,8 @@
 
 /* Begin PBXFileReference section */
 		7A43C0FE27E97651004F3434 /* doctorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doctorView.swift; sourceTree = "<group>"; };
+		7A54E21B28232CF300553EF5 /* FrontHomepageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontHomepageView.swift; sourceTree = "<group>"; };
+		7A54E21D28232D2500553EF5 /* FrontHomepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontHomepage.swift; sourceTree = "<group>"; };
 		7AE2BC9E27C4C2C800102805 /* loginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginPage.swift; sourceTree = "<group>"; };
 		7AE2BCA027C4C2D900102805 /* homePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homePage.swift; sourceTree = "<group>"; };
 		7AE3B47627E14D90002CA78C /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
@@ -242,6 +246,8 @@
 			children = (
 				7AE2BCA027C4C2D900102805 /* homePage.swift */,
 				7AE3B47827E14DA6002CA78C /* HomepageView.swift */,
+				7A54E21B28232CF300553EF5 /* FrontHomepageView.swift */,
+				7A54E21D28232D2500553EF5 /* FrontHomepage.swift */,
 			);
 			path = "Home Page";
 			sourceTree = "<group>";
@@ -407,6 +413,7 @@
 				9C8CFC3A27DA936A00C191A6 /* myMedicationsView.swift in Sources */,
 				9C52248227E13F9F0006402D /* imagePicker.swift in Sources */,
 				9C2DDDDC27C4BC6200390458 /* LoginView.swift in Sources */,
+				7A54E21E28232D2500553EF5 /* FrontHomepage.swift in Sources */,
 				9CC6D89227F58B2C00C09CA8 /* patient.swift in Sources */,
 				9C2DDDDA27C4BC6200390458 /* My_Medical_101App.swift in Sources */,
 				9C2DDE0627C4C2CF00390458 /* myChart.swift in Sources */,
@@ -419,6 +426,7 @@
 				7AE2BC9F27C4C2C800102805 /* loginPage.swift in Sources */,
 				9C817B2127E172B300BD36C8 /* myMedications.swift in Sources */,
 				9C2311C928114A020079CF44 /* docContentView.swift in Sources */,
+				7A54E21C28232CF300553EF5 /* FrontHomepageView.swift in Sources */,
 				9C2D5408280F117100CB383B /* ContentView.swift in Sources */,
 				7AE2BCA127C4C2D900102805 /* homePage.swift in Sources */,
 				9CACDAAC27EADD94003517E9 /* helpPageView.swift in Sources */,

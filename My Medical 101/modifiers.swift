@@ -19,11 +19,22 @@ struct Headers: ViewModifier {
     }
  }
 
+struct HomeTopText: ViewModifier {
+    func body(content: Content) -> some View {
+         content
+            .font(.custom("Didot", size: 35))
+            .foregroundColor(Color.white)
+            .padding()
+            .background(Color("pastelBlue"))
+            .cornerRadius(10)
+    }
+ }
+
 // LOGIN MODIFIERS
 struct LogoText: ViewModifier {
     func body(content: Content) -> some View {
          content
-            .font(.custom("Times New Roman", size: 30))
+            .font(.custom("Didot", size: 35))
             .foregroundColor(Color.black)
             .padding()
             .background(Color.white)
@@ -34,7 +45,7 @@ struct LogoText: ViewModifier {
 struct TopTitleText: ViewModifier {
     func body(content: Content) -> some View {
          content
-            .font(.custom("Times New Roman", size: 30))
+            .font(.custom("Didot", size: 30))
             .foregroundColor(Color.black)
             .padding()
     }
@@ -56,9 +67,9 @@ struct LoginButtonText: ViewModifier {
 struct TopText: ViewModifier {
     func body(content: Content) -> some View {
          content
-            .font(.custom("Times New Roman", size: 25))
+            .font(.custom("Didot", size: 35))
             .foregroundColor(Color.black)
-            .padding()
+            //.padding()
             .cornerRadius(10)
     }
 }
@@ -70,7 +81,7 @@ struct CreateButtonText: ViewModifier {
             .font(.custom("Times New Roman", size: 22))
             .foregroundColor(Color.black)
             .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
-            .background(Color("pastelBlue"))
+            .background(LinearGradient(gradient: Gradient(colors: [.white, Color("pastelBlue"), Color("pastelPurple")]), startPoint: .topLeading, endPoint: .bottomTrailing))
             .cornerRadius(40)
     }
 }
