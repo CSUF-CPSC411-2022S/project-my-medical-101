@@ -24,11 +24,18 @@ struct ContentViewHomepage: View {
                     Text("Welcome \(database.logInFirstName)!")
                         .font(.custom("Times New Roman", size: 25))
                         .bold()
-                    //Text("Upcoming Appointment").modifier(Temp())
+
                     Text("Upcoming appointment: ")
-                    Text("\(database.logInDate)")
-                    Text("\(database.logInTime)")
-                    Text("\(database.logInPurposeOfVisit)")
+                    
+                    VStack{
+                        Text("\(database.logInDate)")
+                        Text("\(database.logInTime)")
+                        Text("\(database.logInPurposeOfVisit)")
+                    }.frame(width:350, height: 80)
+                        .background(Color.gray)
+                        .opacity(0.3)
+                        .cornerRadius(8)
+                    
                     Section {
                         Button(action: {
                         }) {
