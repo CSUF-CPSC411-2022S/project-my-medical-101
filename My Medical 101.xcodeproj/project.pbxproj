@@ -41,6 +41,8 @@
 		7AE3B47727E14D90002CA78C /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE3B47627E14D90002CA78C /* CreateAccountView.swift */; };
 		7AE3B47927E14DA7002CA78C /* HomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE3B47827E14DA6002CA78C /* HomepageView.swift */; };
 		7AEC78B727C4C2B5006D4801 /* scheduleAppt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC78B627C4C2B5006D4801 /* scheduleAppt.swift */; };
+		7AEC8BA92829C7F1009672A3 /* FrontHomepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC8BA82829C7F1009672A3 /* FrontHomepage.swift */; };
+		7AEC8BAB2829C801009672A3 /* FrontHomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC8BAA2829C801009672A3 /* FrontHomepageView.swift */; };
 		9C2311C928114A020079CF44 /* docContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2311C828114A020079CF44 /* docContentView.swift */; };
 		9C2311CB28114A910079CF44 /* docHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2311CA28114A910079CF44 /* docHomeView.swift */; };
 		9C2D5408280F117100CB383B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2D5407280F117100CB383B /* ContentView.swift */; };
@@ -93,6 +95,8 @@
 		7AE3B47627E14D90002CA78C /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		7AE3B47827E14DA6002CA78C /* HomepageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageView.swift; sourceTree = "<group>"; };
 		7AEC78B627C4C2B5006D4801 /* scheduleAppt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scheduleAppt.swift; sourceTree = "<group>"; };
+		7AEC8BA82829C7F1009672A3 /* FrontHomepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontHomepage.swift; sourceTree = "<group>"; };
+		7AEC8BAA2829C801009672A3 /* FrontHomepageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontHomepageView.swift; sourceTree = "<group>"; };
 		9C2311C828114A020079CF44 /* docContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = docContentView.swift; sourceTree = "<group>"; };
 		9C2311CA28114A910079CF44 /* docHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = docHomeView.swift; sourceTree = "<group>"; };
 		9C2D5407280F117100CB383B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -305,6 +309,8 @@
 			children = (
 				7AE2BCA027C4C2D900102805 /* homePage.swift */,
 				7AE3B47827E14DA6002CA78C /* HomepageView.swift */,
+				7AEC8BA82829C7F1009672A3 /* FrontHomepage.swift */,
+				7AEC8BAA2829C801009672A3 /* FrontHomepageView.swift */,
 			);
 			path = "Home Page";
 			sourceTree = "<group>";
@@ -497,9 +503,11 @@
 				9CACDAAA27EA588C003517E9 /* scheduleApptView.swift in Sources */,
 				9C8CFC3A27DA936A00C191A6 /* myMedicationsView.swift in Sources */,
 				9C52248227E13F9F0006402D /* imagePicker.swift in Sources */,
+				7AEC8BA92829C7F1009672A3 /* FrontHomepage.swift in Sources */,
 				9C2DDDDC27C4BC6200390458 /* LoginView.swift in Sources */,
 				9CC6D89227F58B2C00C09CA8 /* patient.swift in Sources */,
 				9C2DDDDA27C4BC6200390458 /* My_Medical_101App.swift in Sources */,
+				7AEC8BAB2829C801009672A3 /* FrontHomepageView.swift in Sources */,
 				9C2DDE0627C4C2CF00390458 /* myChart.swift in Sources */,
 				7AE3B47927E14DA7002CA78C /* HomepageView.swift in Sources */,
 				9C2DDDDC27C4BC6200390458 /* LoginView.swift in Sources */,

@@ -19,7 +19,8 @@ struct My_Medical_101App: App {
     @StateObject var firestoreDB = FirestoreDatabase()
     var body: some Scene {
         WindowGroup {
-            ContentViewLogin()
+            FrontHomepageView()
+            //ContentViewLogin()
                 .environmentObject(patient)
                 .environmentObject(doctor)
                 .environmentObject(scheduleAppt)

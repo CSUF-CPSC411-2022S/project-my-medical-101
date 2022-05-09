@@ -19,14 +19,16 @@ struct ContentViewLogin: View {
      var body: some View {
          NavigationView {
              ZStack {
-                 Color("pastelBlue").ignoresSafeArea()
+                 //Color("pastelBlue").ignoresSafeArea()
                  GeometryReader { geometry in
                      VStack {
+                         Image("headerIcon")
+                         .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
                          HStack {
                              Text("My Medical 101")
-                                 .bold()
+                                 //.bold()
                                  .modifier(LogoText())
-                         }.padding(EdgeInsets(top: -40, leading: 0, bottom: 50, trailing: 0))
+                         }.padding(EdgeInsets(top: -40, leading: 0, bottom: 40, trailing: 0))
                          
                          VStack {
                              Group {
@@ -76,9 +78,10 @@ struct ContentViewLogin: View {
                              }.disabled(email.isEmpty || password.isEmpty)
                              
                          }
+                         .border(Color.gray, width: 5)
                          .background(Color.white)
-                            .cornerRadius(10)
-                            .padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 50))
+                         .cornerRadius(10)
+                         .padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 50))
                             
                          
                          VStack {
@@ -86,7 +89,8 @@ struct ContentViewLogin: View {
                              NavigationLink(destination: ContentViewNewAccount()) {
                                  Text("Create new Account")
                                      .bold()
-                                     .font(.custom("Times New Roman", size: 20))
+                                     .underline()
+                                     .font(.custom("Times New Roman", size: 25))
                                      .foregroundColor(Color.black)
                                      .padding(.top, 20)
                              }.navigationBarBackButtonHidden(true)
@@ -95,6 +99,8 @@ struct ContentViewLogin: View {
                      }
                  }
              }
+             .background(LinearGradient(gradient: Gradient(colors: [.white, Color("pastelBlue"), Color("pastelBlue"), .white]), startPoint: .topLeading, endPoint: .bottomTrailing))
+             .ignoresSafeArea()
          }
          .edgesIgnoringSafeArea(.top)
          .navigationBarBackButtonHidden(true)
