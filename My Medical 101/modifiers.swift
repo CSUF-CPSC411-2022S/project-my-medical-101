@@ -4,18 +4,28 @@
 //
 //  Created by Brenda Gomez on 4/19/22.
 //
-
 import SwiftUI
 
 // TITLE HEADERS
 struct Headers: ViewModifier {
     func body(content: Content) -> some View {
          content
-            .font(.custom("Times New Roman", size: 55))
+            .font(.custom("Noteworthy", size: 30))
             .foregroundColor(Color.black)
-            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+            .padding(EdgeInsets(top: 35, leading: 0, bottom: 0, trailing: 0))
             .frame(width: 500, height: 200)
+            .background(LinearGradient(gradient: Gradient(colors: [.white, Color("pastelBlue"), Color("pastelPurple")]), startPoint: .topLeading, endPoint: .bottomTrailing))
+    }
+ }
+
+struct HomeTopText: ViewModifier {
+    func body(content: Content) -> some View {
+         content
+            .font(.custom("Didot", size: 35))
+            .foregroundColor(Color.white)
+            .padding()
             .background(Color("pastelBlue"))
+            .cornerRadius(10)
     }
  }
 
@@ -58,7 +68,7 @@ struct TopText: ViewModifier {
          content
             .font(.custom("Didot", size: 35))
             .foregroundColor(Color.black)
-            .padding()
+            //.padding()
             .cornerRadius(10)
     }
 }
@@ -86,17 +96,6 @@ struct CATextField: ViewModifier {
 }
 
 // HOME PAGE MODIFIERS
-struct HomeTopText: ViewModifier {
-    func body(content: Content) -> some View {
-         content
-            .font(.custom("Didot", size: 35))
-            .foregroundColor(Color.white)
-            .padding()
-            .background(Color("pastelBlue"))
-            .cornerRadius(10)
-    }
- }
-
 struct TitleText: ViewModifier {
    func body(content: Content) -> some View {
         content
@@ -251,5 +250,3 @@ struct field: ViewModifier {
             .cornerRadius(25)
     }
 }
-
-

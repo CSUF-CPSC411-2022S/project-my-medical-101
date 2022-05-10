@@ -2,14 +2,6 @@
 //  FrontHomepageView.swift
 //  My Medical 101
 //
-//  Created by csuftitan on 5/9/22.
-//
-
-import Foundation
-//
-//  FrontHomepageView.swift
-//  My Medical 101
-//
 //  Created by Anjali Patel on 5/4/22.
 //
 import SwiftUI
@@ -27,20 +19,12 @@ struct FrontHomepageView: View {
                     Image("MedicalAppLogo2")
                         .resizable()
                         .frame(width: 350, height: 350)
-                        .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
-
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                    
                     Text("Get started below!")
                         .font(.custom("Courier New", size: 32))
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0))
-
-                 //   Text("My Medical 101 is an easy to use app for booking your doctor appointments")
-                        
-
-                    Text("Create an account if you are a new patient")
-                        .bold()
-                        .padding(.bottom)
-                        .font(.custom("arial", size: 18))
-
+                    
                     Button(action: {
 
                     }) {
@@ -49,12 +33,7 @@ struct FrontHomepageView: View {
                                 .modifier(CreateButtonText())
                            }.navigationBarBackButtonHidden(true)
                        }.padding(.bottom)
-
-                    Text("Login if you already have an account")
-                        .bold()
-                        .padding(.top)
-                        .font(.custom("arial", size: 20))
-
+                    
                     Button(action: {
 
                     }) {
@@ -63,12 +42,12 @@ struct FrontHomepageView: View {
                                 .modifier(CreateButtonText())
                            }.navigationBarBackButtonHidden(true)
                        }.padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
-
+                    Spacer()
                     Text("⌄")
                         .font(.custom("Times New Roman", size: 100))
                         .foregroundColor(Color("pastelPurple"))
-
-
+                    
+                    
                     Group {
                         VStack {
                             Spacer()
@@ -76,7 +55,7 @@ struct FrontHomepageView: View {
                                 .bold()
                                 .modifier(HomeTopText())
                                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 60, trailing: 0))
-
+                            
                             HStack{
                             Image("personIcon")
                                 .resizable()
@@ -89,40 +68,14 @@ struct FrontHomepageView: View {
                                     .foregroundColor(Color("pastelPurple")))
                                 .shadow(radius: 5)
                                 .padding(.leading, 20)
-
-                            Text("Dr. Anjali Patel  ")
-                                .frame(maxWidth: 300, alignment: .leading)
-                                .padding(.leading, 20)
-                                .font(.custom("SnellRoundhand", size: 25))
-                                Spacer()
-                            }
-                            Text("Post Anesthesia Care Unit Department")
-                                .font(.custom("arial", size: 18))
-                                .padding(EdgeInsets(top: 10, leading: 8, bottom: 50, trailing: 5))
-
-                            HStack{
-                            Image("personIcon")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 125)
-                                .clipShape(Circle())
-                                .overlay(
-                                    Circle()
-                                    .stroke(lineWidth: 4)
-                                    .foregroundColor(Color("pastelPurple")))
-                                .shadow(radius: 5)
-                                .padding(.leading, 20)
-
+                            
                             Text("Dr. Vibha Rajagopalan  ")
                                 .frame(maxWidth: 300, alignment: .leading)
                                 .padding(.leading, 20)
                                 .font(.custom("SnellRoundhand", size: 20))
                                 Spacer()
                             }
-                            Text("Department of Pediatrics - Attending Physician")
-                                .font(.custom("arial", size: 18))
-                                .padding(EdgeInsets(top: 10, leading: 8, bottom: 50, trailing: 5))
-
+                            
                             HStack{
                             Image("personIcon")
                                 .resizable()
@@ -135,83 +88,135 @@ struct FrontHomepageView: View {
                                     .foregroundColor(Color("pastelPurple")))
                                 .shadow(radius: 5)
                                 .padding(.leading, 20)
-
+                            
                             Text("Dr. Brenda Gomez  ")
                                 .frame(maxWidth: 300, alignment: .leading)
                                 .padding(.leading, 20)
                                 .font(.custom("SnellRoundhand", size: 25))
                                 Spacer()
                             }
-                            Text("Department of Pediatrics - Attending Physician")
-                                .font(.custom("arial", size: 18))
-                                .padding(EdgeInsets(top: 10, leading: 8, bottom: 50, trailing: 5))
-
+                            
+                            HStack{
+                            Image("personIcon")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 125)
+                                .clipShape(Circle())
+                                .overlay(
+                                    Circle()
+                                    .stroke(lineWidth: 4)
+                                    .foregroundColor(Color("pastelPurple")))
+                                .shadow(radius: 5)
+                                .padding(.leading, 20)
+                            
+                            Text("Dr. Anjali Patel  ")
+                                .frame(maxWidth: 300, alignment: .leading)
+                                .padding(.leading, 20)
+                                .font(.custom("SnellRoundhand", size: 25))
+                                Spacer()
+                            }
+                            
                         }
-
+                     
                     }
-
+                    Text("⌄")
+                        .font(.custom("Times New Roman", size: 100))
+                        .foregroundColor(Color("pastelPurple"))
+                    
                     Group {
                         VStack {
                             Spacer()
                             Text("About")
                                 .bold()
-                                .modifier(TopText())
+                                .modifier(HomeTopText())
                                 .padding()
                             HStack{
-
-                            Text("Make appointments using the easy to use calender")
+                                
+                            Text("Schedule appointments using the easy to use calendar")
                                 .frame(maxWidth: 300, alignment: .leading)
-                                .padding(.leading, 20)
-                                .font(.custom("Times New Roman", size: 25))
-
+                                .padding(EdgeInsets(top: 0, leading: 25, bottom: 30, trailing: 10))
+                                .font(.custom("Didot", size: 20))
+                            
                                 Text("🗓")
                                     .font(.custom("Times New Roman", size: 100))
                                     .padding(EdgeInsets(top: 20, leading: 0, bottom: 30, trailing: 20))
-
+                                
                             }
-                            Spacer()
-                        }
-                        VStack {
-                            Spacer()
-                            Text("Password: ")
+                            
+                            HStack{
+                            Text("Have all your information saved on My Chart. Viewable by your doctor and editable!")
                                 .frame(maxWidth: 300, alignment: .leading)
-                                .padding(.leading, 20)
-                                .font(.custom("Times New Roman", size: 16))
-
-                            Spacer()
-                        }
-                        VStack {
-                            Spacer()
-                            Text("Phone Number: ")
+                                .padding(EdgeInsets(top: 0, leading: 25, bottom: 30, trailing: 10))
+                                .font(.custom("Didot", size: 20))
+                            
+                                Text("🩺")
+                                    .font(.custom("Times New Roman", size: 100))
+                                    .padding(EdgeInsets(top: 20, leading: 0, bottom: 30, trailing: 20))
+                            }
+                            
+                            HStack{
+                                
+                            Text("Have your medications viewable to you easily")
                                 .frame(maxWidth: 300, alignment: .leading)
-                                .padding(.leading, 20)
-                                .font(.custom("Times New Roman", size: 16))
-                            TextField("Phone Number", text: $phoneNumber)
-                                .modifier(CATextField())
-                                .padding()
+                                .padding(EdgeInsets(top: 0, leading: 25, bottom: 30, trailing: 10))
+                                .font(.custom("Didot", size: 20))
+                            
+                                Text("💊")
+                                    .font(.custom("Times New Roman", size: 65))
+                                    .padding(EdgeInsets(top: 20, leading: 0, bottom: 60, trailing: 20))
+                            }
+                            
+                            Spacer()
                         }
-
+                       
+                        Text("⌄")
+                            .font(.custom("Times New Roman", size: 100))
+                            .foregroundColor(Color("pastelPurple"))
+                        
                         VStack {
                             Spacer()
                             Text("Contact")
                                 .bold()
-                                .modifier(TopText())
+                                .modifier(HomeTopText())
                                 .padding()
-                            Text("Email: ")
+                            Text("Email")
                                 .frame(maxWidth: 300, alignment: .leading)
                                 .padding(.leading, 20)
-                                .font(.custom("Times New Roman", size: 16))
-                            TextField("Email", text: $email)
-                                .modifier(CATextField())
+                                .font(.custom("Courier New", size: 25))
+                            Text("mymedical101 @gmail.com")
+                                .font(.custom("Times New Roman", size: 22))
+                                .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                                .border(Color("pastelPurple"), width: 4)
+                            
+                            Text("Phone")
+                                .frame(maxWidth: 300, alignment: .leading)
+                                .padding(.leading, 20)
+                                .font(.custom("Courier New", size: 25))
+                            Text("123-456-7890")
+                                .font(.custom("Times New Roman", size: 22))
+                                .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                                .border(Color("pastelPurple"), width: 4)
+                            
+                            Text("Social")
+                                .frame(maxWidth: 300, alignment: .leading)
+                                .padding(.leading, 20)
+                                .font(.custom("Courier New", size: 25))
+                            Text("Insta: @mymedical101")
+                                .font(.custom("Times New Roman", size: 22))
+                                .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                                .border(Color("pastelPurple"), width: 4)
+                            
                             Spacer()
+                            Spacer()
+                           
                         }
-
+                    
                     }
-
-
-
-
-
+                    
+                    
+                    
+                    
+                    
                 }
                 .frame(width: 390, height: .infinity)
                 .onAppear(perform: {UITableView.appearance().contentInset.top = -35 })
