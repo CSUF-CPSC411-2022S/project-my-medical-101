@@ -25,9 +25,8 @@ struct ContentViewNewAccount: View {
                 VStack {
                     Text("Create Account")
                         .bold()
-                        .underline()
-                        .modifier(TopText())
-                        .padding()
+                        .modifier(LogoText())
+                        .padding(EdgeInsets(top: 150, leading: 0, bottom: 0, trailing: 0))
                     Text("Please fill out all the information ")
                     Text("below")
                         .padding(.bottom)
@@ -42,6 +41,7 @@ struct ContentViewNewAccount: View {
                                 .padding(.leading, 20)
                                 .font(.custom("Times New Roman", size: 16))
                             TextField("Ex: John", text: $patient.firstName)
+                                .disableAutocorrection(true)
                                 .modifier(CATextField())
                             Spacer()
                         }
@@ -52,6 +52,7 @@ struct ContentViewNewAccount: View {
                                 .padding(.leading, 20)
                                 .font(.custom("Times New Roman", size: 16))
                             TextField("Ex: Smith", text: $patient.lastName)
+                                .disableAutocorrection(true)
                                 .modifier(CATextField())
                             Spacer()
                         }
@@ -62,6 +63,7 @@ struct ContentViewNewAccount: View {
                                 .padding(.leading, 20)
                                 .font(.custom("Times New Roman", size: 16))
                             TextField("mm/dd/yyyy", text: $patient.dob)
+                                .disableAutocorrection(true)
                                 .modifier(CATextField())
                             Spacer()
                         }
@@ -72,6 +74,7 @@ struct ContentViewNewAccount: View {
                                 .padding(.leading, 20)
                                 .font(.custom("Times New Roman", size: 16))
                             TextField("Gender", text: $patient.gender)
+                                .disableAutocorrection(true)
                                 .modifier(CATextField())
                             Spacer()
                         }
@@ -82,6 +85,7 @@ struct ContentViewNewAccount: View {
                                 .padding(.leading, 20)
                                 .font(.custom("Times New Roman", size: 16))
                             TextField("Ex: 5'5", text: $patient.height)
+                                .disableAutocorrection(true)
                                 .modifier(CATextField())
                             Spacer()
                         }
@@ -92,6 +96,7 @@ struct ContentViewNewAccount: View {
                                 .padding(.leading, 20)
                                 .font(.custom("Times New Roman", size: 16))
                             TextField("Ex: lbs", text: $patient.weight)
+                                .disableAutocorrection(true)
                                 .modifier(CATextField())
                             Spacer()
                         }
@@ -105,6 +110,7 @@ struct ContentViewNewAccount: View {
                                 .padding(.leading, 20)
                                 .font(.custom("Times New Roman", size: 16))
                             TextField("Email", text: $patient.email)
+                                .disableAutocorrection(true)
                                 .modifier(CATextField())
                             Spacer()
                         }
@@ -115,6 +121,7 @@ struct ContentViewNewAccount: View {
                                 .padding(.leading, 20)
                                 .font(.custom("Times New Roman", size: 16))
                             TextField("Password", text: $patient.password)
+                                .disableAutocorrection(true)
                                 .modifier(CATextField())
                             Spacer()
                         }
@@ -125,19 +132,10 @@ struct ContentViewNewAccount: View {
                                 .padding(.leading, 20)
                                 .font(.custom("Times New Roman", size: 16))
                             TextField("Phone Number", text: $patient.phoneNumber)
+                                .disableAutocorrection(true)
                                 .modifier(CATextField())
                                 .padding()
                         }
-                        VStack{
-                            Picker(selection: $selected, label: Text("Pick if you are a patient or a doctor:")) {
-                                            Text("Patient").tag(1)
-                                            Text("Doctor").tag(2)
-                                        }
-                                       // .pickerStyle(.radioGroup)
-                                      //  .horizontalRadioGroupLayout()
-                        }
-                            .frame(width: 100, height: 50)
-                            .border(Color("pastelBlue"))
                         Section {
                             Button(action: {
                                 flag = database.add(p: patient)
@@ -150,18 +148,7 @@ struct ContentViewNewAccount: View {
                                     .modifier(CreateButtonText())
                                }.navigationBarBackButtonHidden(true)
                             
-                        }.padding()
-                        Section {
-                            Button(action: {
-
-                            }) {
-                                NavigationLink(destination: docContentView()) {
-                                    Text("Doctor Account")
-                                        .modifier(CreateButtonText())
-                                   }.navigationBarBackButtonHidden(true)
-                               }.padding(.top)
-                        }.disabled(email.isEmpty || password.isEmpty || phoneNumber.isEmpty)
-                            .padding()
+                        }.padding(EdgeInsets(top: 20, leading: 0, bottom: 50, trailing: 0))
                     }
                 }
                 .frame(width: 325, height: .infinity)
@@ -171,7 +158,8 @@ struct ContentViewNewAccount: View {
                 .padding(EdgeInsets(top: -50, leading: 0, bottom: 0, trailing: 0))
             }
             .frame(maxWidth: .infinity)
-            .background(Color("pastelBlue"))
+            .background(LinearGradient(gradient: Gradient(colors: [.white, Color("pastelBlue"), Color("pastelBlue"), .white]), startPoint: .topLeading, endPoint: .bottomTrailing))
+                .ignoresSafeArea()
         }.navigationBarBackButtonHidden(true).navigationBarHidden(true)
     }
  }

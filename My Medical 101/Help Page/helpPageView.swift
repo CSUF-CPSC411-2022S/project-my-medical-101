@@ -20,7 +20,7 @@ struct HelpPage : View{
                     .multilineTextAlignment(.leading)
                     .padding(.leading)
                 Spacer()
-                Text("Scheduling an appointment:\n1. After navigating to the \"Schedule Appointments\" section, you will see the dates on which the doctor is available to meet with you.\n2.Below each date will be the times they are available at. \n3.Please make sure to select one of the times and then click on \"Make Appointment\"\n")
+                Text("Scheduling an appointment:\n1. First, pick a date that works best for you. Then, choose a time between 9 am to 5 pm. \n2. Choose your reason for visit from the options given or enter your own. \n3. Click on Schedule Appointment and then click Done in the pop up.")
                     .multilineTextAlignment(.leading)
                     .padding(.leading)
                 Spacer()
