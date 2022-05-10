@@ -19,7 +19,9 @@ struct ChartView: View {
         NavigationView {
             ScrollView {
                 VStack {
-                    Text("My Chart").modifier(Headers())
+                    Text("My Chart")
+                        .bold()
+                        .modifier(Headers())
                     Group {
                         HStack {
                             ZStack(alignment: .bottomTrailing) {
@@ -111,20 +113,7 @@ struct ChartView: View {
                                 .cornerRadius(25)
                                 .foregroundColor(Color.black)
                             Spacer()
-                            HStack {
-                                NavigationLink(destination: Records()) {
-                                    Text("Records")
-                                        .padding(20)
-                                    Text(">")
-                                        .padding(EdgeInsets(top: 2, leading: 140, bottom: 5, trailing: 2))
-                                    Spacer()
-                                }
-                            }
-                                .font(.custom("Times New Roman", size: 20))
-                                .frame(width: 300)
-                                .background(Color("pastelBlue"))
-                                .cornerRadius(25)
-                                .foregroundColor(Color.black)
+                            
                         }
                     }
                 }

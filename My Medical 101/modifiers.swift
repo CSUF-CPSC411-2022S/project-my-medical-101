@@ -11,11 +11,11 @@ import SwiftUI
 struct Headers: ViewModifier {
     func body(content: Content) -> some View {
          content
-            .font(.custom("Times New Roman", size: 55))
+            .font(.custom("Noteworthy", size: 30))
             .foregroundColor(Color.black)
-            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+            .padding(EdgeInsets(top: 35, leading: 0, bottom: 0, trailing: 0))
             .frame(width: 500, height: 200)
-            .background(Color("pastelBlue"))
+            .background(LinearGradient(gradient: Gradient(colors: [.white, Color("pastelBlue"), Color("pastelPurple")]), startPoint: .topLeading, endPoint: .bottomTrailing))
     }
  }
 

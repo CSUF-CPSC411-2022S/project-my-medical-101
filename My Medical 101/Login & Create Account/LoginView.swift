@@ -17,7 +17,9 @@ struct ContentViewLogin: View {
                  GeometryReader { geometry in
                      VStack {
                          Image("headerIcon")
-                             .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
+                             .resizable()
+                             .frame(width: 200, height: 150)
+                             .padding(EdgeInsets(top: 35, leading: 0, bottom: 0, trailing: 0))
                          HStack {
                              Text("My Medical 101")
                                  //.bold()
@@ -83,7 +85,7 @@ struct ContentViewLogin: View {
                                      .underline()
                                      .font(.custom("Times New Roman", size: 25))
                                      .foregroundColor(Color.black)
-                                     .padding(.top, 20)
+                                     .padding(EdgeInsets(top: 20, leading: 0, bottom: 80, trailing: 0))
                              }.navigationBarBackButtonHidden(true)
                          }
                          Spacer()
